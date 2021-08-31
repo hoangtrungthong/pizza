@@ -1,0 +1,130 @@
+@media (max-width: 991px) {
+  header {
+    padding: 0.5rem;
+  }
+
+  section {
+    padding: 2rem;
+  }
+}
+@media (max-width: 768px) and (min-width: 600px) {
+  html {
+    font-size: 115%;
+  }
+  #menu-bar {
+    display: initial;
+  }
+  header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #f7f7f7;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+
+  header .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  header .navbar a {
+    margin: 1.5rem;
+    padding: 1.5rem;
+    display: block;
+    border: 0.2rem solid rgba(0, 0, 0, 0.1);
+    border-left: 0.5rem solid var(--red);
+    background: #fff;
+  }
+  .home {
+    display: block;
+  }
+  .products .box-container .box {
+    width: calc((100% - 1rem) / 2);
+  }
+  .order .row {
+    display: block;
+  }
+  .footer > div {
+    display: block;
+  }
+}
+@media (max-width: 600px) {
+  html {
+    font-size: 115%;
+  }
+  #menu-bar {
+    display: initial;
+  }
+  header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #f7f7f7;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+
+  header .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  header .navbar a {
+    margin: 1.5rem;
+    padding: 1.5rem;
+    display: block;
+    border: 0.2rem solid rgba(0, 0, 0, 0.1);
+    border-left: 0.5rem solid var(--red);
+    background: #fff;
+  }
+  .home {
+    display: block;
+  }
+  .products .box-container {
+    display: block;
+  }
+  .products .box-container .box {
+    width: 100%;
+    margin-bottom: 4%;
+  }
+  .order .row {
+    display: block;
+  }
+  .order .row form .inputBox input {
+    width: 100%;
+  }
+  .footer h2 {
+    font-size: 3rem;
+  }
+  .footer > div {
+    display: block;
+  }
+  .map {
+    margin-top: 3%;
+  }
+}
+
+@media (max-width: 450px) {
+  header h1 {
+    width: 100%;
+  }
+  .home {
+    display: block;
+  }
+  .order .row {
+    display: block;
+  }
+  .order .row form .inputBox input {
+    width: 100%;
+  }
+  .footer h2 {
+    font-size: 3rem;
+  }
+  .footer > div {
+    display: block;
+  }
+  .map {
+    margin-top: 3%;
+  }
+}

@@ -1,0 +1,93 @@
+.products .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.products .box-container .box {
+  width: calc((100% - 1rem) / 3);
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 1.5rem;
+}
+.products .box-container .box .content {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: -200%;
+  left: 0;
+}
+.products .box-container .box .content {
+  text-align: center;
+  background: #fff;
+  padding: 10%;
+}
+.products .box-container .box img {
+  height: 100%;
+  width: 100%;
+}
+.products .box-container .box .content h3 {
+  font-size: 1.3rem;
+  color: #333;
+}
+.products .box-container .box .content p {
+  font-size: 1rem;
+  color: #666;
+  padding: 1rem 0;
+}
+
+.products .box-container .box:hover .content {
+  transform: translateY(200%);
+  transition: all 1s;
+}
+.products .box-container span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 8px 20px;
+  background-color: #fff;
+  border-bottom-right-radius: 2.5rem;
+  color: var(--red);
+  font-weight: bold;
+}
+.products .topping {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 5px;
+  background-color: #fff;
+}
+.products .btn-topping {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  font-size: 1.1rem;
+  background-color: var(--red);
+  color: #fff;
+  border-radius: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+.products .box-topping .image:hover {
+  transform: scale(1.05);
+}
+.products .box-topping:hover .topping {
+  transform: translateY(100%);
+  transition: all 1s;
+}
+.products .box-topping:hover .btn-topping {
+  display: block;
+  transform: translateY(710%);
+  bottom: 100%;
+  transition: all 0.8s;
+}
+.btn-topping:hover {
+  opacity: 0.8;
+}

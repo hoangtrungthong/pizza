@@ -1,0 +1,28 @@
+.footer {
+  background: #827b7b;
+  text-align: center;
+}
+.footer h2 {
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  color: #fff;
+}
+.footer > div {
+  display: flex;
+  gap: 1rem;
+}
+.footer .share a {
+  display: block;
+}
+.footer .btn {
+  color: #fff;
+}
+.map {
+  width: 100%;
+}
+.map iframe {
+  width: 100%;
+  height: 100%;
+}
