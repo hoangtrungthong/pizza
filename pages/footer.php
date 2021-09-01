@@ -2,7 +2,7 @@
     <h2>liên hệ với chúng tôi</h2>
     <div>
         <div class="share">
-            <a href="#" class="btn">facebook</a>
+            <a href="http://facebook.com/trungthong.1999" class="btn">facebook</a>
             <a href="#" class="btn">twitter</a>
             <a href="#" class="btn">instagram</a>
             <a href="#" class="btn">pinterest</a>

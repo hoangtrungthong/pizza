@@ -33,6 +33,15 @@
         <!-- footer -->
         <?php require "pages/footer.php" ?>
     </div>
+    <div class="loader">
+        <img src="images/loader.gif" alt="" srcset="">
+    </div>
+    <!-- Messenger Plugin chat Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Plugin chat code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
 </body>
 
 <script src="js/script.js"></script>
