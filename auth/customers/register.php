@@ -10,34 +10,14 @@ if (isset($_POST['submit'])) {
     $password = md5($_POST['password']);
     $rePassword = md5($_POST['rePassword']);
     $message = '';
-   
 
-    if ($password === $rePassword ) {
-        if ( isset( $_POST['g-recaptcha-response'] ) && ! empty( $_POST['g-recaptcha-response'] )) { 
+
+    if ($password === $rePassword) {
+        if (isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])) {
             $secret = '6Lc8iUEcAAAAADzIiOMaZqXvn8jpom0PIekyTOHd';
-            $verifyResponse = file_get_contents( 'https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_POST['g-recaptcha-response'] );
-            $responseData   = json_decode( $verifyResponse );
-            if($responseCaptchaData->success) {
-                $to          = 'contact@hocwp.net';
-            $subject     = 'New contact form have been submitted';
-            $htmlContent = "
-                <h1>Contact request details</h1>
-                <p><b>Name: </b>" . $name . "</p>
-                <p><b>Email: </b>" . $email . "</p>
-                <p><b>Message: </b>" . $message . "</p>
-            ";
-            // Always set content-type when sending HTML email
-            $headers = "MIME-Version: 1.0" . "\r\n";
-            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-            // More headers
-            $headers .= 'From:' . $name . ' <' . $email . '>' . "\r\n";
-            //send email
-            @mail( $to, $subject, $htmlContent, $headers );
-
-
-
-
-
+            $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_POST['g-recaptcha-response']);
+            $responseData   = json_decode($verifyResponse);
+            if ($responseCaptchaData->success) {
                 $sql = "SELECT * FROM customers LIMIT 1";
 
                 $query = mysqli_query($conn, $sql);
@@ -64,7 +44,7 @@ if (isset($_POST['submit'])) {
         }
     } else {
         $message = "Mật khẩu xác nhận không chính xác.";
-    } 
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -103,7 +83,8 @@ if (isset($_POST['submit'])) {
                 <div class="form-group">
                     <input class="form-control" type="password" name="rePassword" placeholder="Xác nhận lại mật khẩu" required value="<?php echo $_POST['rePassword'] ?>">
                 </div>
-                <button class="form-group g-recaptcha" data-sitekey="6Lc8iUEcAAAAAELLOaLi8G9qUdWWwf2hCcwg4JwQ">Tôi không phải robot</button>
+                <input type="checkbox" id="check" class="form-group g-recaptcha" data-sitekey="6Lc8iUEcAAAAAELLOaLi8G9qUdWWwf2hCcwg4JwQ">
+                <label for="check">Tôi không phải robot</label> 
                 <div><?php echo $message; ?></div>
                 <button name="submit" type="submit" class="btn btn-primary">Đăng Kí</button>
                 <p>Bạn đã có tài khoản? <a href="login.php">Đăng Nhập</a></p>
@@ -112,4 +93,5 @@ if (isset($_POST['submit'])) {
     </div>
 </body>
 <script src="https://www.google.com/recaptcha/api.js"></script>
+
 </html>
