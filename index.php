@@ -2,9 +2,9 @@
 require "config/mysql_db.php";
 session_start();
 
-if (!isset($fullname)) {
-    header("location: auth/customers/login.php");
-}
+// if (!isset($fullname)) {
+//     header("location: auth/customers/login.php");
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
