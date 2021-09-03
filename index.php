@@ -1,5 +1,6 @@
 <?php
-    require "config/mysql_db.php";
+require "config/mysql_db.php";
+error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,13 +26,13 @@
             // topping
             require('pages/topping.php');
 
-            // order
-            require('pages/order.php');
+            // ship banner
+            require('pages/ship.php');
+
+            // contact
+            require('pages/contact.php');
             ?>
         </div>
-
-        <!-- footer -->
-        <?php require "pages/footer.php" ?>
     </div>
     <div class="loader">
         <img src="images/loader.gif" alt="" srcset="">

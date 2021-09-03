@@ -19,11 +19,9 @@
   position: absolute;
   top: -200%;
   left: 0;
-}
-.products .box-container .box .content {
   text-align: center;
   background: #fff;
-  padding: 10%;
+  padding: 6%;
 }
 .products .box-container .box img {
   height: 100%;
@@ -90,4 +88,7 @@
 }
 .btn-topping:hover {
   opacity: 0.8;
+}
+.btn-cart {
+  padding: 0.2rem 1rem;
 }

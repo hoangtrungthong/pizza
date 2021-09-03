@@ -7,7 +7,12 @@
             <div class="content">
                 <h3>Flammkuchen</h3>
                 <p>Đế bánh được cán mỏng theo hình chữ nhật hoặc hình bầu dục, phủ lên trên là một lớp phô mai trắng, tiêu, kem tươi, thịt heo xông khói, muối và hành tây.</p>
-                <a href="#order" class="btn">đặt món</a>
+                <div>
+                    <a href="#order" class="btn">đặt món</a>
+                    <a href="" class="btn btn-cart" title="Thêm vào giỏ hàng">
+                        <img src="images/add-to-cart.png" alt="">
+                    </a>
+                </div>
             </div>
         </div>
         <div class="box">
@@ -16,7 +21,12 @@
             <div class="content">
                 <h3>Lamacun</h3>
                 <p>Điểm nhấn của Lamacun chính là phần nhân mềm tan chảy, được chế biến từ các nguyên liệu như: thịt xay nhuyễn, rau mùi tây, ớt chuông, cà chua, hành tây,..</p>
-                <a href="#order" class="btn">đặt món</a>
+                <div>
+                    <a href="#order" class="btn">đặt món</a>
+                    <a href="" class="btn btn-cart" title="Thêm vào giỏ hàng">
+                        <img src="images/add-to-cart.png" alt="">
+                    </a>
+                </div>
             </div>
         </div>
         <div class="box">
@@ -25,7 +35,12 @@
             <div class="content">
                 <h3>Tarte Flambee</h3>
                 <p>Phần nhân của loại pizza này được làm từ phô mai trắng, hành lá và thịt xông khói thái sợi. Sự kết hợp của các nguyên liệu tạo nên vị béo ngậy, thơm nồng, cuốn hút.</p>
-                <a href="#order" class="btn">đặt món</a>
+                <div>
+                    <a href="#order" class="btn">đặt món</a>
+                    <a href="" class="btn btn-cart" title="Thêm vào giỏ hàng">
+                        <img src="images/add-to-cart.png" alt="">
+                    </a>
+                </div>
             </div>
         </div>
         <div class="box">
@@ -34,7 +49,12 @@
             <div class="content">
                 <h3>Okonomiyaki</h3>
                 <p>Phần đế của Okonomiyaki được làm từ bột mì, khoai nghiền, men,... Phủ lên trên là nước sốt Okonomiyaki và những miếng vụn cá ngừ.</p>
-                <a href="#order" class="btn">đặt món</a>
+                <div>
+                    <a href="#order" class="btn">đặt món</a>
+                    <a href="" class="btn btn-cart" title="Thêm vào giỏ hàng">
+                        <img src="images/add-to-cart.png" alt="">
+                    </a>
+                </div>
             </div>
         </div>
         <div class="box">
@@ -43,7 +63,12 @@
             <div class="content">
                 <h3>Lángos</h3>
                 <p>Loại bánh này có lớp nhân phô mai mềm ướt, phủ lên trên là kem chua, tỏi và thịt tôm,...</p>
-                <a href="#order" class="btn">đặt món</a>
+                <div>
+                    <a href="#order" class="btn">đặt món</a>
+                    <a href="" class="btn btn-cart" title="Thêm vào giỏ hàng">
+                        <img src="images/add-to-cart.png" alt="">
+                    </a>
+                </div>
             </div>
         </div>
         <div class="box">
@@ -52,7 +77,12 @@
             <div class="content">
                 <h3>Sfiha</h3>
                 <p>Sfiha gây ấn tượng bởi có kích thước nhỏ chỉ bằng bàn tay. Ở giữa là phần nhân đầy ắp thịt cừu băm nhỏ, hạt thông, hành tây, bột ớt, tương cà, và các gia vị khác.</p>
-                <a href="#order" class="btn">đặt món</a>
+                <div>
+                    <a href="#order" class="btn">đặt món</a>
+                    <a href="" class="btn btn-cart" title="Thêm vào giỏ hàng">
+                        <img src="images/add-to-cart.png" alt="">
+                    </a>
+                </div>
             </div>
         </div>
         <div class="box">
@@ -61,7 +91,12 @@
             <div class="content">
                 <h3>Zapiekanka</h3>
                 <p>Phủ lên 1 chiếc bánh mì dài là phần nhân chứa đầy phô mai, nấm, thịt nguội, xúc xích và hành lá.</p>
-                <a href="#order" class="btn">đặt món</a>
+                <div>
+                    <a href="#order" class="btn">đặt món</a>
+                    <a href="" class="btn btn-cart" title="Thêm vào giỏ hàng">
+                        <img src="images/add-to-cart.png" alt="">
+                    </a>
+                </div>
             </div>
         </div>
         <div class="box">
@@ -70,7 +105,12 @@
             <div class="content">
                 <h3>Bulgogi</h3>
                 <p>Bulgogi Pizza có phần đế mỏng và giòn tan, bên trên là phần nhân đa dạng nguyên liệu, kết hợp với nước sốt ngon tuyệt</p>
-                <a href="#order" class="btn">đặt món</a>
+                <div>
+                    <a href="#order" class="btn">đặt món</a>
+                    <a href="" class="btn btn-cart" title="Thêm vào giỏ hàng">
+                        <img src="images/add-to-cart.png" alt="">
+                    </a>
+                </div>
             </div>
         </div>
         <div class="box">
@@ -79,7 +119,12 @@
             <div class="content">
                 <h3>Deep-Dish</h3>
                 <p>có vỏ bánh dày và phần nhân đầy ắp thịt, sốt phô mai và sốt cà chua.</p>
-                <a href="#order" class="btn">đặt món</a>
+                <div>
+                    <a href="#order" class="btn">đặt món</a>
+                    <a href="" class="btn btn-cart" title="Thêm vào giỏ hàng">
+                        <img src="images/add-to-cart.png" alt="">
+                    </a>
+                </div>
             </div>
         </div>
     </div>

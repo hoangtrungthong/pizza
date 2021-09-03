@@ -1,0 +1,28 @@
+products:
+    id
+    name
+    avatar
+
+    
+
+products_size:
+    id
+    name
+    price
+
+
+order:
+    id
+    username
+    phone
+    address
+    products_name
+    price_size_name
+    price_size_price
+    quantity
+    note
+
+payment:
+    id
+    Online
+    offline

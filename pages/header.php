@@ -7,11 +7,18 @@
     </h1>
     <div id="menu-bar" class="fas fa-bars"></div>
     <nav class="navbar">
-        <a href="#home">Trang chủ</a>
-        <a href="#products">thực đơn</a>
+        <a href="#home">home</a>
+        <a href="#products">menu</a>
         <a href="#topping">topping</a>
-        <a href="#order">đặt món</a>
-        <a href="#footer">liên hệ</a>
+        <a href="#footer">contact</a>
+        <a href="login.php">
+            <img src="images/grocery-cart.png" alt="" title="Giỏ hàng">
+            cart
+        </a>
+        <a href="login.php">
+            <img src="images/locksmith.png" alt="" title="Đăng nhập">
+            login
+        </a>
     </nav>
 </header>
 <section class="home" id="home">

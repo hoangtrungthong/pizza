@@ -5,6 +5,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/header.css">
 <link rel="stylesheet" href="css/list.css">
-<link rel="stylesheet" href="css/order.css">
+<link rel="stylesheet" href="css/contact.css">
 <link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/ship.css">
 <link rel="stylesheet" href="css/responsive.css">
