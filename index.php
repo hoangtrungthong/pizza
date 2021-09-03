@@ -1,6 +1,10 @@
 <?php
 require "config/mysql_db.php";
-error_reporting(0);
+session_start();
+
+if (!isset($fullname)) {
+    header("location: auth/customers/login.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -15,9 +15,12 @@
             <img src="images/grocery-cart.png" alt="" title="Giỏ hàng">
             cart
         </a>
-        <a href="login.php">
+        <a href="auth/customers/login.php">
             <img src="images/locksmith.png" alt="" title="Đăng nhập">
             login
+            <?php
+                    echo $fullname; 
+             ?>
         </a>
     </nav>
 </header>
