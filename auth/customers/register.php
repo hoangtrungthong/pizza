@@ -10,13 +10,34 @@ if (isset($_POST['submit'])) {
     $password = md5($_POST['password']);
     $rePassword = md5($_POST['rePassword']);
     $message = '';
-    $secret = '6Lc8iUEcAAAAADzIiOMaZqXvn8jpom0PIekyTOHd';
+   
 
     if ($password === $rePassword ) {
-        if (isset($_POST['g-recaptcha-response']) ) { 
+        if ( isset( $_POST['g-recaptcha-response'] ) && ! empty( $_POST['g-recaptcha-response'] )) { 
+            $secret = '6Lc8iUEcAAAAADzIiOMaZqXvn8jpom0PIekyTOHd';
             $verifyResponse = file_get_contents( 'https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_POST['g-recaptcha-response'] );
             $responseData   = json_decode( $verifyResponse );
             if($responseCaptchaData->success) {
+                $to          = 'contact@hocwp.net';
+            $subject     = 'New contact form have been submitted';
+            $htmlContent = "
+                <h1>Contact request details</h1>
+                <p><b>Name: </b>" . $name . "</p>
+                <p><b>Email: </b>" . $email . "</p>
+                <p><b>Message: </b>" . $message . "</p>
+            ";
+            // Always set content-type when sending HTML email
+            $headers = "MIME-Version: 1.0" . "\r\n";
+            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+            // More headers
+            $headers .= 'From:' . $name . ' <' . $email . '>' . "\r\n";
+            //send email
+            @mail( $to, $subject, $htmlContent, $headers );
+
+
+
+
+
                 $sql = "SELECT * FROM customers LIMIT 1";
 
                 $query = mysqli_query($conn, $sql);
