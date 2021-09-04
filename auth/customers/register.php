@@ -11,37 +11,37 @@ if (isset($_POST['submit'])) {
     $rePassword = md5($_POST['rePassword']);
     $message = '';
 
-
     if ($password === $rePassword) {
-        if (isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])) {
-            $secret = '6Lc8iUEcAAAAADzIiOMaZqXvn8jpom0PIekyTOHd';
-            $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_POST['g-recaptcha-response']);
-            $responseData   = json_decode($verifyResponse);
-            if ($responseData->success) {
-                $sql = "SELECT * FROM customers LIMIT 1";
+        // if (isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])) {
+        //     $secret = '6Lc8iUEcAAAAADzIiOMaZqXvn8jpom0PIekyTOHd';
+        //     $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_POST['g-recaptcha-response']);
+        //     $responseData   = json_decode($verifyResponse);
+        //     if ($responseData->success) {
+        $sql = "SELECT * FROM customers WHERE email='$email' OR phone='$phone' LIMIT 1";
 
-                $query = mysqli_query($conn, $sql);
-                $customers = mysqli_fetch_assoc($query);
+        $query = mysqli_query($conn, $sql);
+        $customers = mysqli_fetch_assoc($query);
 
-                if (!$customers) {
-                    $sql = "INSERT INTO customers (fullname, email, phone, address, password )
+        if (!$customers) {
+
+            $sql = "INSERT INTO customers (fullname, email, phone, address, password )
                             VALUES ('$fullname', '$email', '$phone', '$address', '$password' )";
 
-                    $result = mysqli_query($conn, $sql);
-                    if ($result) {
-                        echo '<script>alert("Đăng kí thành công!! Hãy đăng nhập!")</script>';
-                        echo '<script>window.location.href="login.php"</script>';
-                    }
-                } else {
-                    if ($customers['email'] === $_POST['email']) {
-                        $message = 'Địa chỉ email đã được sử dụng.';
-                    }
-                    if ($customers['phone'] === $_POST['phone']) {
-                        $message = 'Số điện thoại đã được sử dụng.';
-                    }
-                }
+            $result = mysqli_query($conn, $sql);
+            if ($result) {
+                echo '<script>alert("Đăng kí thành công!! Hãy đăng nhập!")</script>';
+                echo '<script>window.location.href="login.php"</script>';
+            }
+        } else {
+            if ($customers['email'] === $_POST['email']) {
+                $message = 'Địa chỉ email đã được sử dụng.';
+            }
+            if ('0' . $customers['phone'] === $_POST['phone']) {
+                $message = 'Số điện thoại đã được sử dụng.';
             }
         }
+        //     }
+        // }
     } else {
         $message = "Mật khẩu xác nhận không chính xác.";
     }
@@ -83,19 +83,16 @@ if (isset($_POST['submit'])) {
                 <div class="form-group">
                     <input class="form-control" type="password" name="rePassword" placeholder="Xác nhận lại mật khẩu" required value="<?php echo $_POST['rePassword'] ?>">
                 </div>
-                <input type="checkbox" id="check" class="form-group g-recaptcha" 
-                        data-sitekey="6Lc8iUEcAAAAAELLOaLi8G9qUdWWwf2hCcwg4JwQ" 
-                        data-callback='onSubmit' 
-                        data-action='submit'>
-                <label for="check">Tôi không phải robot</label> 
                 <div><?php echo $message; ?></div>
-                <button name="submit" type="submit" class="btn btn-primary" >Đăng Kí</button>
+                <input type="checkbox" id="check" class="form-group g-recaptcha" data-sitekey="6Lc8iUEcAAAAAELLOaLi8G9qUdWWwf2hCcwg4JwQ" data-callback='onSubmit' data-action='submit'>
+                <label for="check">Tôi không phải robot</label>
+                <button name="submit" type="submit" class="btn btn-primary">Đăng Kí</button>
                 <p>Bạn đã có tài khoản? <a href="login.php">Đăng Nhập</a></p>
             </form>
         </div>
     </div>
 </body>
-<script src="https://www.google.com/recaptcha/api.js"></script>
+<!-- <script src="https://www.google.com/recaptcha/api.js"></script>
 <script src="https://www.google.com/recaptcha/api.js?render=6Lc8iUEcAAAAAELLOaLi8G9qUdWWwf2hCcwg4JwQ"></script>
-<script src="captcha.js"></script>
+<script src="captcha.js"></script> -->
 </html>
