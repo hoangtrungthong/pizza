@@ -21,7 +21,8 @@
   display: flex;
 }
 .sidebar {
-  width: 30%;
+  width: 40%;
+  height: max-content;
   padding: 1rem;
   background-color: #f78888;
   box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 10%)

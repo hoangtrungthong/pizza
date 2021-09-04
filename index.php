@@ -3,12 +3,9 @@ require "config/mysql_db.php";
 session_start();
 error_reporting(0);
 
-if (!isset($_SESSION['email']) ) {
-    header("location: auth/customers/login.php");
-}
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">

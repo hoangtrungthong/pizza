@@ -1,6 +1,50 @@
 var menu = document.querySelector('#menu-bar');
 var navbar = document.querySelector('.navbar');
+var btn = document.querySelectorAll('.btn');
+var user = document.getElementById('username');
+var send = document.getElementById('send');
+var cart = document.getElementById('cart');
+var cartLink = document.querySelector('.cart');
+var div = document.createElement('div');
+var cartArea = div.setAttribute('id','cart-area');
+var p = document.createElement('p');
+var img = document.createElement('img');
 
+// redirect
+btn.forEach(el => {
+  if (!user) {
+    el.setAttribute("href", "auth/customers/login.php");
+    send.removeAttribute("href");
+  } else {
+    el.setAttribute("href", "")
+    send.removeAttribute("href");
+    cartLink.removeAttribute("href");
+    cartLink.onclick = () => {
+      div.classList.toggle('show');
+    }
+    window.onscroll = (e) => {
+      if (!e.target.matches('.cart')) {
+        var cartAreas = document.querySelector("#cart-area");
+          if (cartAreas.classList.contains('show')) {
+            cartAreas.classList.remove('show');
+        }
+      }
+    }
+  }
+});
+
+// cart area
+if (user) {
+  p.setAttribute('style','padding: 1rem; text-align: center');
+  p.innerText="Giỏ hàng trống";
+  img.src = "images/anxiety.png";
+  img.setAttribute('style', 'margin: 0 auto;');
+  p.appendChild(img);
+  div.appendChild(p);
+  cart.appendChild(div);
+}
+
+// menu button
 menu.onclick = () => {
   menu.classList.toggle('fa-times');
   navbar.classList.toggle('active');
@@ -11,12 +55,16 @@ window.onscroll = () => {
   navbar.classList.remove('active');
 }
 
+// load index
 function loader() {
   document.querySelector('.loader').classList.add('fade-out');
 }
 window.onload = () => {
   setInterval(loader, 3500)
 }
+
+
+
 // facebook
 var chatbox = document.getElementById('fb-customer-chat');
 chatbox.setAttribute("page_id", "110858906979203");
@@ -29,6 +77,7 @@ window.fbAsyncInit = function() {
   });
 };
 
+// chat bots
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;

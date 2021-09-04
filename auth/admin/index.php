@@ -6,67 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
+    <link rel="shortcut icon" href="images/house.png" type="image/x-icon">
     <?php require "css/styles.php" ?>
     <link rel="stylesheet" href="css/admin.css">
 </head>
 
 <body>
     <div class="wrap">
-        <header class="nav">
-            <div>
-                <img src="images/unauthorized-person.png" alt="">
-                <h1>Adminator</h1>
-            </div>
-            <div class="nav-bar">
-                <a href="">
-                    <img src="images/notification.png" title="Thông báo" alt="" srcset="">
-                </a>
-                <a href="">
-                    <img src="images/email.png" title="Tin nhắn" alt="" srcset="">
-                </a>
-                <a href="">
-                    <img src="images/settings.png" title="Cài đặt" alt="" srcset="">
-                </a>
-                <a href="">
-                    <img src="images/logout.png" title="Đăng xuất" alt="" srcset="">
-                </a>
-            </div>
-        </header>
+        <?php require "header.php" ?>
         <section class="content">
-            <div class="sidebar">
-                <ul>
-                    <li>
-                        <a href="">
-                            <img src="images/house.png" alt="" srcset="">
-                            trang chủ
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="images/rating.png" alt="" srcset="">
-                            Quản lý khách hàng
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="images/shelf.png" alt="" srcset="">
-                            Quản lý sản phẩm
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="images/order.png" alt="" srcset="">
-                            Quản lý đơn hàng
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="images/man.png" alt="" srcset="">
-                            Quản lý users
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            <?php require "sidebar.php" ?>
             <div class="box_content">
                 <div class="total">
                     <div>
