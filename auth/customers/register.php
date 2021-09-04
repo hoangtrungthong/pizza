@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
             $secret = '6Lc8iUEcAAAAADzIiOMaZqXvn8jpom0PIekyTOHd';
             $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_POST['g-recaptcha-response']);
             $responseData   = json_decode($verifyResponse);
-            if ($responseCaptchaData->success) {
+            if ($responseData->success) {
                 $sql = "SELECT * FROM customers LIMIT 1";
 
                 $query = mysqli_query($conn, $sql);
@@ -63,7 +63,7 @@ if (isset($_POST['submit'])) {
 <body>
     <div class="auth">
         <div class="auth-form">
-            <form action="" method="post">
+            <form action="" method="post" id="customerForm">
                 <h1>Đăng Kí Tài Khoản</h1>
                 <div class="form-group">
                     <input class="form-control" type="text" name="fullname" placeholder="Họ Tên" required value="<?php echo $fullname ?>">
@@ -83,15 +83,19 @@ if (isset($_POST['submit'])) {
                 <div class="form-group">
                     <input class="form-control" type="password" name="rePassword" placeholder="Xác nhận lại mật khẩu" required value="<?php echo $_POST['rePassword'] ?>">
                 </div>
-                <input type="checkbox" id="check" class="form-group g-recaptcha" data-sitekey="6Lc8iUEcAAAAAELLOaLi8G9qUdWWwf2hCcwg4JwQ">
+                <input type="checkbox" id="check" class="form-group g-recaptcha" 
+                        data-sitekey="6Lc8iUEcAAAAAELLOaLi8G9qUdWWwf2hCcwg4JwQ" 
+                        data-callback='onSubmit' 
+                        data-action='submit'>
                 <label for="check">Tôi không phải robot</label> 
                 <div><?php echo $message; ?></div>
-                <button name="submit" type="submit" class="btn btn-primary">Đăng Kí</button>
+                <button name="submit" type="submit" class="btn btn-primary" >Đăng Kí</button>
                 <p>Bạn đã có tài khoản? <a href="login.php">Đăng Nhập</a></p>
             </form>
         </div>
     </div>
 </body>
 <script src="https://www.google.com/recaptcha/api.js"></script>
-
+<script src="https://www.google.com/recaptcha/api.js?render=6Lc8iUEcAAAAAELLOaLi8G9qUdWWwf2hCcwg4JwQ"></script>
+<script src="captcha.js"></script>
 </html>

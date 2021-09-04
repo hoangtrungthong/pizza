@@ -14,7 +14,9 @@ if (isset($_POST['submit'])) {
     $row = mysqli_num_rows($result);
 
     if ($row == 1) {
-        $_SESSION['fullname'] = $fullname;
+        $user = mysqli_fetch_assoc($result);
+        $_SESSION['email']= $email;
+        $_SESSION['username'] = $user['fullname'];
         echo '<script>window.location.href="../../index.php"</script>';
     } else {
         $message = 'Thông tin tài khoản hoặc mật khẩu không chính xác.';

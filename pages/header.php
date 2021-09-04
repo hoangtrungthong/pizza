@@ -17,10 +17,13 @@
         </a>
         <a href="auth/customers/login.php">
             <img src="images/locksmith.png" alt="" title="Đăng nhập">
-            login
             <?php
-                    echo $fullname; 
-             ?>
+                echo 'Chào, '.$_SESSION['username'];
+                echo '<a href="auth/customers/logout.php" title="Đăng xuất">
+                        <img src="auth/admin/images/logout.png"></img>
+                    thoát
+                    </a>'
+            ?>
         </a>
     </nav>
 </header>
