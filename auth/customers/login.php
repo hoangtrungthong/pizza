@@ -54,7 +54,7 @@ if (isset($_POST['submit'])) {
                 <!-- <div class="form-group g-recaptcha" data-sitekey="6Lc8iUEcAAAAAELLOaLi8G9qUdWWwf2hCcwg4JwQ"></div> -->
                 <div><?php echo $message ?></div>
                 <button name="submit" type="submit" class="btn btn-primary">Đăng Nhập</button>
-                <p>Bạn chưa có tài khoản? <a href="register.php">Đăng Kí</a></p>
+                <p>Chưa có tài khoản? <a href="register.php">Đăng Kí</a></p>
             </form>
         </div>
     </div>

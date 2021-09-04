@@ -58,3 +58,14 @@ form {
   color: black;
   transition: all 0.5s;
 }
+
+/* responsive */
+@media (max-width: 450px) {
+  form {
+    width: 90%;
+  }
+  .auth-form > form > p > a  {
+    margin: 30px;
+  }
+}
+

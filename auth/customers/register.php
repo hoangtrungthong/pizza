@@ -87,7 +87,7 @@ if (isset($_POST['submit'])) {
                 <!-- <input type="checkbox" id="check" class="form-group g-recaptcha" data-sitekey="6Lc8iUEcAAAAAELLOaLi8G9qUdWWwf2hCcwg4JwQ" data-callback='onSubmit' data-action='submit'>
                 <label for="check">Tôi không phải robot</label> -->
                 <button name="submit" type="submit" class="btn btn-primary">Đăng Kí</button>
-                <p>Bạn đã có tài khoản? <a href="login.php">Đăng Nhập</a></p>
+                <p>Đã có tài khoản? <a href="login.php">Đăng Nhập</a></p>
             </form>
         </div>
     </div>
