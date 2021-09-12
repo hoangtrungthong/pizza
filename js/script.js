@@ -1,19 +1,21 @@
 var menu = document.querySelector('#menu-bar');
 var navbar = document.querySelector('.navbar');
 var btn = document.querySelectorAll('.btn');
+// redirect login
 var user = document.getElementById('username');
 var send = document.getElementById('send');
 var cart = document.getElementById('cart');
 var cartLink = document.querySelector('.cart');
 var div = document.createElement('div');
-var cartArea = div.setAttribute('id','cart-area');
+// cart shopping
+var cartArea = div.setAttribute('id', 'cart-area');
 var p = document.createElement('p');
 var img = document.createElement('img');
 
-// redirect
+// redirect login
 btn.forEach(el => {
   if (!user) {
-    el.setAttribute("href", "auth/customers/login.php");
+    el.setAttribute("href", "login/index.php");
     send.removeAttribute("href");
   } else {
     el.setAttribute("href", "")
@@ -25,18 +27,18 @@ btn.forEach(el => {
     window.onscroll = (e) => {
       if (!e.target.matches('.cart')) {
         var cartAreas = document.querySelector("#cart-area");
-          if (cartAreas.classList.contains('show')) {
-            cartAreas.classList.remove('show');
+        if (cartAreas.classList.contains('show')) {
+          cartAreas.classList.remove('show');
         }
       }
     }
   }
 });
 
-// cart area
+// cart shopping
 if (user) {
-  p.setAttribute('style','padding: 1rem; text-align: center');
-  p.innerText="Giỏ hàng trống";
+  p.setAttribute('style', 'padding: 1rem; text-align: center');
+  p.innerText = "Giỏ hàng trống";
   img.src = "images/anxiety.png";
   img.setAttribute('style', 'margin: 0 auto;');
   p.appendChild(img);
@@ -63,31 +65,73 @@ window.onload = () => {
   setInterval(loader, 3500)
 }
 
+// login fb
+window.fbAsyncInit = function () {
+  FB.init({
+    appId: 385940312930181,
+    cookie: true,
+    xfbml: true,
+    version: 'v11.0'
+  });
+
+  FB.AppEvents.logPageView();
+
+};
+
+(function (d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {
+    return;
+  }
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://connect.facebook.net/en_US/sdk.js";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
 
 
+FB.getLoginStatus(function (response) {
+  statusChangeCallback(response);
+});
+
+function checkLoginState() {
+  FB.getLoginStatus(function (response) {
+    statusChangeCallback(response);
+  });
+}
 // facebook
 var chatbox = document.getElementById('fb-customer-chat');
 chatbox.setAttribute("page_id", "110858906979203");
 chatbox.setAttribute("attribution", "biz_inbox");
 
-window.fbAsyncInit = function() {
+window.fbAsyncInit = function () {
   FB.init({
-    xfbml            : true,
-    version          : 'v11.0'
+    xfbml: true,
+    version: 'v11.0'
   });
 };
 
 // chat bots
-(function(d, s, id) {
+(function (d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
+  js = d.createElement(s);
+  js.id = id;
   js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-var __vnp = {code : 8479,key:'', secret : '0b6923d07f25c9d8f2387008532bc8d2'};
-(function() {var ga = document.createElement('script');ga.type = 'text/javascript';ga.async=true; 
-ga.defer=true;ga.src = '//core.vchat.vn/code/tracking.js';
-var s = document.getElementsByTagName('script');
-s[0].parentNode.insertBefore(ga, s[0]);})();
+var __vnp = {
+  code: 8479,
+  key: '',
+  secret: '0b6923d07f25c9d8f2387008532bc8d2'
+};
+(function () {
+  var ga = document.createElement('script');
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.defer = true;
+  ga.src = '//core.vchat.vn/code/tracking.js';
+  var s = document.getElementsByTagName('script');
+  s[0].parentNode.insertBefore(ga, s[0]);
+})();

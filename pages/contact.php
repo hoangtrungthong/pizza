@@ -4,15 +4,15 @@
         <form action="" method="post">
             <h3 class="highlight">Nhận tin khuyến mại :</h3><br>
             <div class="inputBox">
-                <input type="text" placeholder="Họ Tên" required>
+                <input type="text" name="name" placeholder="Họ Tên" required>
                 <input type="tel" id="phone" name="phone" placeholder="Số điện thoại" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required>
             </div>
             <div class="inputBox">
-                <input type="email" placeholder="Email" required>
-                <input type="text" placeholder="Địa chỉ" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="text" name="address" placeholder="Địa chỉ" required>
             </div>
             <div class="inputBox">
-                <textarea placeholder="Ghi chú" name="" id="" cols="15" rows="5"></textarea>
+                <textarea placeholder="Ghi chú" name="note" id="" cols="15" rows="5"></textarea>
             </div>
             <button type="submit" class="btn" id="send" name="send">Gửi thông tin</button>
         </form>

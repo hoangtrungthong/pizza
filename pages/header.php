@@ -11,21 +11,22 @@
             <a href="#home">home</a>
             <a href="#products">menu</a>
             <a href="#topping">topping</a>
-            <a href="#footer">contact</a>
+            <a href="#order">contact</a>
             <?php
             if (!isset($_SESSION['email'])) {
-                echo '<a href="auth/customers/login.php">
-                        <img src="images/locksmith.png" alt="" title="Đăng nhập">
-                        Đăng nhập
+                echo '<a href="register/index.php">
+                        <img src="images/locksmith.png" alt="" title="Đăng ký">
+                        Đăng ký 
                     </a>';
+                echo '<a href="login/index.php">|  Đăng Nhập </a>';
             } else {
                 echo '<div  id="cart"><a href="" class="cart">
                         <img src="images/grocery-cart.png" alt="" title="Giỏ hàng">
                         cart
                     </a></div>';
                 echo '<a><img src="images/locksmith.png" alt="" title="" id="username">Chào, ' . $_SESSION['username'] . '</a>';
-                echo '<a href="auth/customers/logout.php" title="Đăng xuất">
-                        <img src="auth/admin/images/logout.png"></img>
+                echo '<a href="logout/index.php" title="Đăng xuất">
+                        <img src="admin/images/logout.png"></img>
                         thoát
                     </a>';
             }

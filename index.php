@@ -1,8 +1,11 @@
 <?php
-require "config/mysql_db.php";
+require "drivers/ConfigDB.php";
+require "Contact.php";
+
 session_start();
 error_reporting(0);
-
+$contact = new Contact($conn);
+$contact = $contact->send($_POST);
 ?>
 <!DOCTYPE html>
 <html>
