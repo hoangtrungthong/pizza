@@ -31,6 +31,17 @@
             </ul>
         </li>
         <li>
+            <a href="../toppings/index.php">
+                <img src="../images/shelf.png" alt="" srcset="">
+                Quản lý topping
+            </a>
+            <i class="far fa-hand-point-right"></i>
+            <ul class="dropdown"> 
+                <li><a href="../toppings/index.php">Danh sách <i class="fas fa-bars"></i></a></li>
+                <li><a href="../toppings/create.php">Thêm <i class="fas fa-plus"></i></a></li>
+            </ul>
+        </li>
+        <li>
             <a href="../orders.php">
                 <img src="../images/order.png" alt="" srcset="">
                 Quản lý đơn hàng

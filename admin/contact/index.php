@@ -1,9 +1,11 @@
 <?php
 require "../../drivers/ConfigDB.php";
-require "../../Contact.php";
+require "../../drivers/MysqlDB.php";
+require "../app/ClassFile/Contact.php";
 
-$contact = new MysqlDB($conn);
-$contacts = $contact->get('contact');
+$contact = new Contact($conn);
+$contacts = $contact->getAll('contact');
+$contact->updateStatus();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,8 +32,8 @@ $contacts = $contact->get('contact');
                     <table>
                         <tr>
                             <th>Họ Tên</th>
-                            <th>Số Điện Thoại</th>
-                            <th>Địa chỉ email</th>
+                            <th>SĐT</th>
+                            <th>Email</th>
                             <th>Địa chỉ</th>
                             <th>Ghi chú</th>
                             <th>Phản hồi</th>
@@ -51,16 +53,11 @@ $contacts = $contact->get('contact');
                                         <td><?php echo $contact["note"] ?></td>
                                         <td>
                                             <?php
-                                            $id = $contact['id'];
-                                            $data = ['checked' => "1"];
-                                            $where = ['id' => "$id"];
-                                            $contacts = new MysqlDB($conn);
-                                            $result = $contacts->update('contact', $data, $where);
-                                            if ($contact['checked'] === '1') {
+                                            if ($contact['checked'] === "1") {
                                                 echo '<p>Đã phản hồi</p>';
                                             } else {
                                             ?>
-                                                <a href="index.php?id=<?php echo $contact['id'] ?>" name="check">Phản hồi</a>
+                                                <a href="update.php?id=<?php echo $contact['id'] ?>">Xác nhận</a>
                                             <?php
                                             }
                                             ?>
@@ -73,7 +70,7 @@ $contacts = $contact->get('contact');
                                 }
                             } else {
                                 ?> <tr>
-                                    <td colspan="6">Trống ....</td>
+                                    <td colspan="7">Chưa có liên hệ nào.</td>
                                 </tr> <?php
                                     }
                                         ?>

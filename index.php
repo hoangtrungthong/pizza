@@ -48,6 +48,7 @@ $contact = $contact->send($_POST);
     <!-- Your Plugin chat code -->
     <div id="fb-customer-chat" class="fb-customerchat">
     </div>
+    
 </body>
 
 <script src="js/script.js"></script>

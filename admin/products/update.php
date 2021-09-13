@@ -1,6 +1,7 @@
 <?php
 require "../../drivers/ConfigDB.php";
 require "../constants/index.php";
+require "../helpers/validate.php";
 require "validate.php";
 require "../helpers/index.php";
 require "../app/ClassFile/Product.php";
@@ -68,7 +69,7 @@ $productUp = $products->update($_POST, $_FILES, $_SERVER['REQUEST_METHOD']);
                                         <span class="highlight"><?php echo $productUp['descriptions']  ?></span>
                                     </div>
                                 </div>
-                                <button class="btn" type="submit" name="update">Cập nhập</button>
+                                <button class="btn" type="submit" name="update">Cập nhật</button>
                             </form>
                         </div>
                     </div>

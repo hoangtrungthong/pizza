@@ -1,7 +1,7 @@
 <?php
 require "../drivers/ConfigDB.php";
 require "../User.php";
-require_once( 'Facebook/autoload.php' );
+require_once('Facebook/autoload.php');
 session_start();
 error_reporting(0);
 
@@ -9,10 +9,10 @@ $user = new Customer($conn);
 $users = $user->login($_POST);
 
 $fb = new Facebook\Facebook([
-  'app_id' => '385940312930181',
-  'app_secret' => '404d29e903a2abf152cfe2dcf9d41c75',
-  'default_graph_version' => 'v2.9',
-  ]);
+    'app_id' => '385940312930181',
+    'app_secret' => '404d29e903a2abf152cfe2dcf9d41c75',
+    'default_graph_version' => 'v2.9',
+]);
 $helper = $fb->getRedirectLoginHelper();
 $permissions = ['email']; // Optional permissions
 $loginUrl = $helper->getLoginUrl('https://vzn.vn/demo/fb-callback.php', $permissions);
@@ -53,5 +53,41 @@ $loginUrl = $helper->getLoginUrl('https://vzn.vn/demo/fb-callback.php', $permiss
         </div>
     </div>
 </body>
+<script>
+    // login fb
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId: 385940312930181,
+            cookie: true,
+            xfbml: true,
+            version: 'v11.0'
+        });
+
+        FB.AppEvents.logPageView();
+
+    };
+
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+
+    FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+    });
+
+    function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
+    }
+</script>
 
 </html>

@@ -45,7 +45,7 @@ section {
   border: 0.2rem solid var(--red);
   color: var(--red);
   cursor: pointer;
-  font-size: 1.3rem;
+  font-size: 1.27rem;
   border-radius: 0.5rem;
   position: relative;
   overflow: hidden;
@@ -209,7 +209,7 @@ header {
 #cart-area {
   display: none;
   position: absolute;
-  top: 99%;
+  top: 68%;
   left: 65%;
   min-width: 300px;
   min-height: 300px;
@@ -224,7 +224,9 @@ header {
   z-index: 1000;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
-.show {
-  display: block!important;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+#cart:hover #cart-area {
+  display: block;
 }
+/* .show {
+  display: block!important;
+} */

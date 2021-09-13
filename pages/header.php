@@ -15,16 +15,15 @@
             <?php
             if (!isset($_SESSION['email'])) {
                 echo '<a href="register/index.php">
-                        <img src="images/locksmith.png" alt="" title="Đăng ký">
                         Đăng ký 
                     </a>';
-                echo '<a href="login/index.php">|  Đăng Nhập </a>';
+                echo '<a href="login/index.php"> Đăng Nhập </a>';
             } else {
-                echo '<div  id="cart"><a href="" class="cart">
+                echo '<div  id="cart"><a href="cart/index.php" class="cart">
                         <img src="images/grocery-cart.png" alt="" title="Giỏ hàng">
                         cart
                     </a></div>';
-                echo '<a><img src="images/locksmith.png" alt="" title="" id="username">Chào, ' . $_SESSION['username'] . '</a>';
+                echo '<a><img src="images/locksmith.png" alt="" title="" id="username">' . $_SESSION['username'] . '</a>';
                 echo '<a href="logout/index.php" title="Đăng xuất">
                         <img src="admin/images/logout.png"></img>
                         thoát

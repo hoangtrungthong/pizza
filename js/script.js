@@ -20,10 +20,10 @@ btn.forEach(el => {
   } else {
     el.setAttribute("href", "")
     send.removeAttribute("href");
-    cartLink.removeAttribute("href");
-    cartLink.onclick = () => {
-      div.classList.toggle('show');
-    }
+    cartLink.setAttribute("href", "cart/index.php");
+    // cartLink.onclick = () => {
+    //   div.classList.toggle('show');
+    // }
     window.onscroll = (e) => {
       if (!e.target.matches('.cart')) {
         var cartAreas = document.querySelector("#cart-area");
@@ -65,41 +65,7 @@ window.onload = () => {
   setInterval(loader, 3500)
 }
 
-// login fb
-window.fbAsyncInit = function () {
-  FB.init({
-    appId: 385940312930181,
-    cookie: true,
-    xfbml: true,
-    version: 'v11.0'
-  });
-
-  FB.AppEvents.logPageView();
-
-};
-
-(function (d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {
-    return;
-  }
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://connect.facebook.net/en_US/sdk.js";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-
-
-FB.getLoginStatus(function (response) {
-  statusChangeCallback(response);
-});
-
-function checkLoginState() {
-  FB.getLoginStatus(function (response) {
-    statusChangeCallback(response);
-  });
-}
-// facebook
+// Messenger Plugin chat Code
 var chatbox = document.getElementById('fb-customer-chat');
 chatbox.setAttribute("page_id", "110858906979203");
 chatbox.setAttribute("attribution", "biz_inbox");
@@ -107,11 +73,10 @@ chatbox.setAttribute("attribution", "biz_inbox");
 window.fbAsyncInit = function () {
   FB.init({
     xfbml: true,
-    version: 'v11.0'
+    version: 'v12.0'
   });
 };
 
-// chat bots
 (function (d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -121,17 +86,18 @@ window.fbAsyncInit = function () {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-var __vnp = {
-  code: 8479,
-  key: '',
-  secret: '0b6923d07f25c9d8f2387008532bc8d2'
-};
-(function () {
-  var ga = document.createElement('script');
-  ga.type = 'text/javascript';
-  ga.async = true;
-  ga.defer = true;
-  ga.src = '//core.vchat.vn/code/tracking.js';
-  var s = document.getElementsByTagName('script');
-  s[0].parentNode.insertBefore(ga, s[0]);
-})();
+// chat bots
+// var __vnp = {
+//   code: 8479,
+//   key: '',
+//   secret: '0b6923d07f25c9d8f2387008532bc8d2'
+// };
+// (function () {
+//   var ga = document.createElement('script');
+//   ga.type = 'text/javascript';
+//   ga.async = true;
+//   ga.defer = true;
+//   ga.src = '//core.vchat.vn/code/tracking.js';
+//   var s = document.getElementsByTagName('script');
+//   s[0].parentNode.insertBefore(ga, s[0]);
+// })();

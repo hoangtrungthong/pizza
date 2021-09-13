@@ -32,7 +32,7 @@ class Product
             $price = $request['price'];
 
             $error = validateField($nameProduct, $descriptions, $size, $price);
-            $errorImg = validateFile($files['image'], 5242880, $method = null);
+            $errorImg = validateFile($files['image'], 5242880);
 
             if (empty($error) || empty($errorImg)) {
                 $productExists = "SELECT * FROM products WHERE name='$nameProduct' LIMIT 1";
@@ -141,8 +141,8 @@ class Product
                         INNER JOIN product_attribute
                         ON products.id = product_attribute.product_id
                         WHERE products.id = '$id'";
-                $delete = mysqli_query($this->conn, $sql);
-                if ($delete) {
+                $querySuccess = mysqli_query($this->conn, $sql);
+                if ($querySuccess) {
                     $sql = "ALTER TABLE product_attribute
                             ADD CONSTRAINT product_attribute_product_id 
                             FOREIGN KEY (product_id) 

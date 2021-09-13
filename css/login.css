@@ -32,7 +32,7 @@
 .auth-form > form > div {
   margin-top: 30px;
 }
-form {
+.auth-form form {
   border-radius: 1rem;
   background-color: #f57676;
   text-align: center;
@@ -41,8 +41,8 @@ form {
   margin: 0 auto;
   font-size: 25px;
 }
-.form-control,
-.btn {
+.auth .form-control,
+.auth .btn {
   font-size: 20px;
   border-radius: 10px;
 }
@@ -51,7 +51,6 @@ form {
   border-style: none;
   color: #635b5b;
   width: 70%;
-  margin-top: 20px;
 }
 .btn-primary:hover {
   background-color: cornsilk;
@@ -61,7 +60,7 @@ form {
 
 /* responsive */
 @media (max-width: 450px) {
-  form {
+  .auth-form form {
     width: 90%;
   }
   .auth-form > form > p > a  {
