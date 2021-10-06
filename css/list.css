@@ -82,8 +82,8 @@
 }
 .products .box-topping:hover .btn-topping {
   display: block;
-  transform: translateY(735%);
-  bottom: 103%;
+  transform: translateY(777%);
+  bottom: 100%;
   transition: all 0.8s;
 }
 .btn-topping:hover {

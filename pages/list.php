@@ -1,6 +1,26 @@
 <section class="products" id="products">
     <h2 class="heading">Các loại <span class="highlight">pizza</span></h2>
     <div class="box-container">
+        <!-- <?php
+        foreach ($products as $product) {
+            ?>
+                <div class="box">
+                    <img class="image" src="<?php echo $product["image"] ?>">
+                    <span><?php echo $product['price']."k" ?></span>
+                    <div class="content">
+                        <h3><?php echo $product['name'] ?></h3>
+                        <p><?php echo $product['description'] ?></p>
+                        <div>
+                            <a href="index.php?page=cart&id=<?php ?>" class="btn">đặt món</a>
+                            <a href="" class="btn btn-cart" title="Thêm vào giỏ hàng">
+                                <img src="images/add-to-cart.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            <?php
+            }
+            ?> -->
         <div class="box">
             <img class="image" src="images/p1.jpg" alt="Hình Ảnh">
             <span>150k - 300k</span>
