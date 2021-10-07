@@ -5,6 +5,7 @@ require "admin/app/ClassFile/Product.php";
 
 session_start();
 error_reporting(0);
+
 $contact = new Contact($conn);
 $contact = $contact->send($_POST);
 

@@ -6,7 +6,7 @@
             ?>
             
                 <div class="box">
-                    <img class="image" src="<?php echo $product["image"] ?>">
+                    <img class="image" src="<?php echo substr($product["image"], 6) ?>">
                     <span><?php echo $product['price']."k" ?></span>
                     <div class="content">
                         <h3><?php echo $product['name'] ?></h3>
