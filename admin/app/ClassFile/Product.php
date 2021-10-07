@@ -33,6 +33,7 @@ class Product
 
             $error = validateField($nameProduct, $descriptions, $size, $price);
             $errorImg = validateFile($files['image'], 5242880);
+            
 
             if (empty($error) || empty($errorImg)) {
                 $productExists = "SELECT * FROM products WHERE name='$nameProduct' LIMIT 1";
@@ -43,7 +44,7 @@ class Product
                     $file = uploadFile($files['image'], PRODUCT_UPLOAD);
 
                     $sqlProduct = "INSERT INTO products (name, image, description)
-                    VALUES ('$nameProduct', '$file', '$descriptions')";
+                                    VALUES ('$nameProduct', '$file', '$descriptions')";
 
                     mysqli_query($this->conn, $sqlProduct);
                     $last_id = mysqli_insert_id($this->conn);

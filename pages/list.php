@@ -4,6 +4,7 @@
         <!-- <?php
         foreach ($products as $product) {
             ?>
+            
                 <div class="box">
                     <img class="image" src="<?php echo $product["image"] ?>">
                     <span><?php echo $product['price']."k" ?></span>

@@ -3,7 +3,7 @@ require "../../drivers/MysqlDB.php";
 require "../../drivers/ConfigDB.php";
 require "../app/ClassFile/Topping.php";
 require "../helpers/index.php";
-require "../constants/index.php";
+require "../../constants/index.php";
 require "validate.php";
 require "../helpers/validate.php";
 error_reporting(0);

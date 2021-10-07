@@ -1,6 +1,6 @@
 <?php
 require "../../drivers/ConfigDB.php";
-require "../constants/index.php";
+require "../../constants/index.php";
 require "../helpers/validate.php";
 require "validate.php";
 require "../helpers/index.php";
