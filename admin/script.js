@@ -7,6 +7,6 @@ img.onchange = e => {
     reader.readAsDataURL(files[0]);
     reader.onload =() => {
         var url = reader.result
-        preview.setAttribute('src',url)
+        preview.setAttribute('src',url);
     }
 }

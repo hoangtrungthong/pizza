@@ -1,6 +1,19 @@
 <section class="products" id="topping">
     <h2 class="heading">Các loại <span class="highlight">topping</span></h2>
     <div class="box-container">
+        <!-- <?php foreach ($toppings as $topping) {
+        ?>
+            <div class="box box-topping">
+                <img class="image" src="<?php echo substr($topping['image'], 6) ?>" alt="Hình Ảnh">
+                <span><?php echo $topping['price']."k" ?></span>
+                <div class="topping">
+                    <h3><?php echo $topping['name'] ?></h3>
+                </div>
+                <a href="#order" class="btn btn-topping">Topping</a>
+            </div>
+        <?php
+        }
+        ?> -->
         <div class="box box-topping">
             <img class="image" src="images/top1.png" alt="Hình Ảnh">
             <span>10k - 30k</span>

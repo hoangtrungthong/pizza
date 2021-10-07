@@ -14,8 +14,20 @@ $users = $user->register($_POST);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng kí tài khoản</title>
+    <link rel="shortcut icon" href="../images/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
-    <?php require "../vendor/styles.php" ?>
+    <link rel="stylesheet" href="css/headers.css">
+    <link rel="stylesheet" href="css/list.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/ship.css">
+    <link rel="stylesheet" href="../css/logins.css">
+    <link rel="stylesheet" href="css/responsivee.css">
 </head>
 
 <body>
@@ -24,7 +36,7 @@ $users = $user->register($_POST);
             <form action="" method="post" id="customerForm">
                 <h1>Đăng Kí Tài Khoản</h1>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="fullname" placeholder="Họ Tên"  required value="<?php echo $_POST['fullname'] ?>">
+                    <input class="form-control" type="text" name="fullname" placeholder="Full Name"  required value="<?php echo $_POST['fullname'] ?>">
                     <span class="highlight"><?php echo $users['name'] ?></span>
                 </div>
                 <div class="form-group">
@@ -32,26 +44,26 @@ $users = $user->register($_POST);
                     <span class="highlight"><?php echo $users['email'] ?></span>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" name="phone" required placeholder="Số điện thoại"  value="<?php echo $_POST['phone'] ?>">
+                    <input class="form-control" type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" name="phone" required placeholder="Phone Number"  value="<?php echo $_POST['phone'] ?>">
                     <span class="highlight"><?php echo $users['phone'] ?></span>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="address" placeholder="Địa chỉ" required  value="<?php echo $_POST['address'] ?>">
+                    <input class="form-control" type="text" name="address" placeholder="Address" required  value="<?php echo $_POST['address'] ?>">
                     <span class="highlight"><?php echo $users['address'] ?></span>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="password" name="password" placeholder="Mật khẩu"  required value="<?php echo $_POST['password'] ?>">
+                    <input class="form-control" type="password" name="password" placeholder="Password"  required value="<?php echo $_POST['password'] ?>">
                     <span class="highlight"><?php echo $users['password'] ?></span>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="password" name="rePassword" placeholder="Xác nhận lại mật khẩu"  required value="<?php echo $_POST['rePassword'] ?>">
+                    <input class="form-control" type="password" name="rePassword" placeholder="Confirm Password"  required value="<?php echo $_POST['rePassword'] ?>">
                     <p class="highlight"><?php echo $users['password'] ?></p>
                 </div>
                 <div><?php echo $message; ?></div>
                 <!-- <input type="checkbox" id="check" class="form-group g-recaptcha" data-sitekey="6Lc8iUEcAAAAAELLOaLi8G9qUdWWwf2hCcwg4JwQ" data-callback='onSubmit' data-action='submit'>
                 <label for="check">Tôi không phải robot</label> -->
-                <button name="submit" type="submit" class="btn btn-primary">Đăng Kí</button>
-                <p>Đã có tài khoản? <a href="../login/index.php">Đăng Nhập</a></p>
+                <button name="submit" type="submit" class="btn btn-primary">Register</button>
+                <p>You have account? <a href="../login/index.php">Login</a></p>
             </form>
         </div>
     </div>

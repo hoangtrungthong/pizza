@@ -13,11 +13,16 @@ error_reporting(0);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
-    <?php require "../vendor/styles.php" ?>
-    <link rel="stylesheet" href="../css/header.css">
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/headers.css">
     <link rel="stylesheet" href="../css/contact.css">
     <link rel="stylesheet" href="../css/table-cart.css">
-    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/responsivee.css">
 </head>
 
 <body>
@@ -38,15 +43,11 @@ error_reporting(0);
                 <?php
                 if (isset($_SESSION['email'])) {
                     echo '<div id="cart">
-                            <a class="cart">
-                                <img src="../images/grocery-cart.png" alt="" title="Giỏ hàng">
-                                    cart
-                            </a>
+                            <a class="cart">cart</a>
                         </div>';
-                    echo '<a><img src="../images/locksmith.png" alt="" title="" id="username">' . $_SESSION['username'] . '</a>';
+                    echo '<a id="username">'.'hi,'.$_SESSION['username'] . '</a>';
                     echo '<a href="logout/index.php" title="Đăng xuất">
-                        <img src="../admin/images/logout.png"></img>
-                        thoát
+                        log out
                     </a>';
                 }
                 ?>
@@ -63,11 +64,7 @@ error_reporting(0);
                 <th>Số tiền</th>
                 <th>Thao tác</th>
             </tr>
-            <tr>
-                <td>
-                    
-                </td>
-            </tr>
+            <tr></tr>
             <tr>
                 <td colspan="5">Giỏ hàng trống</td>
             </tr>

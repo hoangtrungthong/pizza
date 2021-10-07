@@ -18,7 +18,7 @@ $contact->updateStatus();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     <link rel="shortcut icon" href="../images/shelf.png" type="image/x-icon">
     <?php require "../css/styles.php" ?>
-    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>

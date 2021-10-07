@@ -25,69 +25,81 @@ $loginUrl = $helper->getLoginUrl('https://vzn.vn/demo/fb-callback.php', $permiss
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng nhập</title>
+    <link rel="shortcut icon" href="../images/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
-    <?php require "../vendor/styles.php" ?>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="stylesheet" href="css/headers.css">
+    <link rel="stylesheet" href="css/list.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/ship.css">
+    <link rel="stylesheet" href="../css/logins.css">
+    <link rel="stylesheet" href="css/responsivee.css">
 </head>
 
 <body>
     <div class="auth">
         <div class="auth-form">
             <form action="" method="post">
-                <h1>Đăng Nhập Vào Hệ thống</h1>
+                <h1>Login to the account</h1>
                 <div class="form-group">
-                    <input class="form-control" type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" name="phone" placeholder="Số điện thoại" required value="<?php echo $_POST['phone'] ?>">
+                    <input class="form-control" type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" name="phone" placeholder="Phone Number" required value="<?php echo $_POST['phone'] ?>">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="email" name="email" placeholder="Địa chỉ email" required value="<?php echo $_POST['email']  ?>">
+                    <input class="form-control" type="email" name="email" placeholder="Email Address" required value="<?php echo $_POST['email']  ?>">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="password" name="password" placeholder="Mật khẩu" required value="<?php echo $_POST['password'] ?>">
+                    <input class="form-control" type="password" name="password" placeholder="Password" required value="<?php echo $_POST['password'] ?>">
                 </div>
                 <!-- <div class="form-group g-recaptcha" data-sitekey="6Lc8iUEcAAAAAELLOaLi8G9qUdWWwf2hCcwg4JwQ"></div> -->
                 <div><?php echo $message ?></div>
-                <button name="submit" type="submit" class="btn btn-primary">Đăng Nhập</button>
-                <p>Chưa có tài khoản? <a href="../register/index.php">Đăng Kí</a></p>
-                <?php echo '<a class="btn btn-primary" href="' . $loginUrl . '">Đăng nhập bằng Facebook!</a>'; ?>
+                <button name="submit" type="submit" class="btn btn-primary">Login</button>
+                <p>Don't have account? <a href="../register/index.php">Register</a></p>
+                <?php echo '<a class="btn btn-primary" href="' . $loginUrl . '">Login with Facebook!</a>'; ?>
             </form>
         </div>
     </div>
 </body>
-<script>
-    // login fb
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId: 385940312930181,
-            cookie: true,
-            xfbml: true,
-            version: 'v11.0'
-        });
+    <script>
+        // login fb
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: 385940312930181,
+                cookie: true,
+                xfbml: true,
+                version: 'v11.0'
+            });
 
-        FB.AppEvents.logPageView();
+            FB.AppEvents.logPageView();
 
-    };
+        };
 
-    (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {
-            return;
-        }
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
 
 
-    FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-    });
-
-    function checkLoginState() {
         FB.getLoginStatus(function(response) {
             statusChangeCallback(response);
         });
-    }
-</script>
+
+        function checkLoginState() {
+            FB.getLoginStatus(function(response) {
+                statusChangeCallback(response);
+            });
+        }
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </html>

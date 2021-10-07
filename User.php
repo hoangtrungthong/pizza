@@ -74,7 +74,7 @@ class Customer extends MysqlDB
             $password = md5($_POST['password']);
 
             $result = $this->getCustomers($email, $phone);
-            if ($result['phone'] === $phone && $result['email'] === $email && $result['password'] === $password) {
+            if ('0'.$result['phone'] === $phone && $result['email'] === $email && $result['password'] === $password) {
                 $_SESSION['email'] = $email;
                 $_SESSION['username'] = $result['name'];
                 echo '<script>window.location.href="../index.php"</script>';

@@ -7,9 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-    <link rel="shortcut icon" href="images/house.png" type="image/x-icon">
-    <?php require "../css/styles.php" ?>
-    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="shortcut icon" href="images/rating.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/list.css">
+    <link rel="stylesheet" href="../../css/order.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
@@ -84,5 +89,6 @@
         </section>
     </div>
 </body>
-<script src="script.js"></script>
+<script src="../script.js"></script>
+
 </html>

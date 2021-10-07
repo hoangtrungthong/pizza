@@ -19,8 +19,8 @@ class MysqlDB
     }
 
     public function getOne($table, $key, $value)
-    {
-        $sql = "SELECT * FROM $table WHERE $key = $value";
+    {  
+        $sql = "SELECT * FROM $table WHERE $key = '$value'";
         $query = mysqli_query($this->conn, $sql);
         $results = mysqli_fetch_assoc($query);
 

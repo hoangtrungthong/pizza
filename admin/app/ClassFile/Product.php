@@ -55,7 +55,7 @@ class Product
                     $products = mysqli_query($this->conn, $sqlProAttribute);
                     if ($products) {
                         echo '<script>alert("Thêm mới thành công.")</script>';
-                        echo'<script>window.location.href= "index.php"</script>';
+                        echo'<script>window.location.href= "product.php"</script>';
                     }
                 } else {
                     $this->showError();
@@ -119,7 +119,7 @@ class Product
                 $result = mysqli_query($this->conn, $sql);
                 if ($result) {
                     echo '<script>alert("Cập nhật thành công.")</script>';
-                    echo'<script>window.location.href= "index.php"</script>';
+                    echo'<script>window.location.href= "product.php"</script>';
                 }
             } else {
                 return $errorImg;
@@ -157,7 +157,7 @@ class Product
                     mysqli_query($this->conn, $sql);
 
                     echo '<script>alert("Đã xóa sản phẩm.")</script>';
-                    echo '<script>window.location.href="index.php"</script>';
+                    echo '<script>window.location.href="product.php"</script>';
                 }   
             } else {
                 echo '<script>alert("Lỗi rồi! Không tìm thấy sản phẩm.")</script>';
