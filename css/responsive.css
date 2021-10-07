@@ -49,6 +49,20 @@
   .header .navbar.active {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   }
+  .header .navbar.active a::before {
+    width: 0;
+  }
+  .header .navbar.active a::after {
+    width: 0;
+  }
+  .header .navbar.active a:hover::before {
+    width: 50%;
+    right: 0;
+  }
+  .header .navbar.active a:hover::after {
+    width: 50%;
+    left: 0;
+  }
   .header .navbar a {
     margin: 0.8rem;
     padding: 0.5rem;
