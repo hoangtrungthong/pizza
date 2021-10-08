@@ -1,10 +1,15 @@
-<?php
-session_start();
-?>
 <header class="nav header">
     <div>
         <img src="../images/unauthorized-person.png" alt="">
-        <h1>Administrator</h1>
+        <h1>
+            <?php
+            session_start();
+            if (!isset($_SESSION['email'])) {
+                header("location: ../../index.php");
+            }
+            echo $_SESSION['username'];
+            ?>
+        </h1>
     </div>
     <div class="nav-bar">
         <a href="#">
@@ -16,7 +21,7 @@ session_start();
         <a href="#">
             <img src="../images/settings.png" title="Cài đặt">
         </a>
-        <a href="#">
+        <a href="../logout.php">
             <img src="../images/logout.png" title="Đăng xuất">
         </a>
     </div>

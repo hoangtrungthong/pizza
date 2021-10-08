@@ -32,11 +32,6 @@ $loginUrl = $helper->getLoginUrl('https://vzn.vn/demo/fb-callback.php', $permiss
     <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/headers.css">
-    <link rel="stylesheet" href="css/list.css">
-    <link rel="stylesheet" href="css/contact.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/ship.css">
     <link rel="stylesheet" href="../css/logins.css">
     <link rel="stylesheet" href="css/responsivee.css">
 </head>

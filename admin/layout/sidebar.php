@@ -58,6 +58,19 @@
                 <li><a href="../products/delete.php">Xóa <i class="fas fa-minus"></i></a></li>
             </ul>
         </li>
+        <li class="<?php if (basename($_SERVER['SCRIPT_NAME']) == 'contact.php') {
+                        echo "active";
+                    } else {
+                        echo '';
+                    } ?>">
+            <a href="../contact/contact.php">liên hệ</a>
+            <ul class="dropdown">
+                <li><a href="../products/index.php">Danh sách <i class="fas fa-bars"></i></a></li>
+                <li><a href="../products/create.php">Thêm <i class="fas fa-plus"></i></a></li>
+                <li><a href="../products/update.php">Sửa <i class="fas fa-pencil-alt"></i></a></li>
+                <li><a href="../products/delete.php">Xóa <i class="fas fa-minus"></i></a></li>
+            </ul>
+        </li>
         <!-- <li class="btn_menu">
             <a href="../users.php">
                 <img src="../images/man.png" alt="" srcset="">

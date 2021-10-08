@@ -27,6 +27,7 @@ class Contact extends MysqlDB
                 'email' => $email,
                 'address' => $address,
                 'note' => $note,
+                'checked'=> 0
             ];
 
             $getContact = $this->getContact($phone);

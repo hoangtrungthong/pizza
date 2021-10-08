@@ -14,7 +14,7 @@ class Contact extends MysqlDB
             $data = ['checked' => 1];
 
             $this->update('contact', $data, 'id', $_GET['id']);
-            header("location: index.php");
+            header("location: contact.php");
         }
     }
 }
