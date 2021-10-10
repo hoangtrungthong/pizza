@@ -15,23 +15,22 @@ var img = document.createElement('img');
 // redirect login
 btn.forEach(el => {
   if (!user) {
-    el.setAttribute("href", "login/index.php");
+    el.setAttribute("href", "login/");
     send.removeAttribute("href");
   } else {
-    el.setAttribute("href", "")
     send.removeAttribute("href");
-    cartLink.setAttribute("href", "cart/index.php");
+    cartLink.setAttribute("href", "cart.php");
     // cartLink.onclick = () => {
     //   div.classList.toggle('show');
     // }
-    window.onscroll = (e) => {
-      if (!e.target.matches('.cart')) {
-        var cartAreas = document.querySelector("#cart-area");
-        if (cartAreas.classList.contains('show')) {
-          cartAreas.classList.remove('show');
-        }
-      }
-    }
+    // window.onscroll = (e) => {
+    //   if (!e.target.matches('.cart')) {
+    //     var cartAreas = document.querySelector("#cart-area");
+    //     if (cartAreas.classList.contains('show')) {
+    //       cartAreas.classList.remove('show');
+    //     }
+    //   }
+    // }
   }
 });
 
@@ -62,9 +61,18 @@ function loader() {
   document.querySelector('.loader').classList.add('fade-out');
 }
 window.onload = () => {
-  setInterval(loader, 3500)
+  setInterval(loader, 3000)
 }
 
+// page active
+var btn_active = navbar.getElementsByClassName('btn_active')
+for (var i = 0; i < btn_active.length; i++) {
+  btn_active[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
 // Messenger Plugin chat Code
 var chatbox = document.getElementById('fb-customer-chat');
 chatbox.setAttribute("page_id", "110858906979203");

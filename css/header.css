@@ -25,6 +25,7 @@ img {
 }
 body {
   background:#f7f7f7 url('../images/home-bg.jpg') no-repeat fixed;
+  background-size: cover;
 }
 section {
   padding: 1rem 9%;
@@ -115,6 +116,7 @@ header {
 .header .navbar {
   display: flex;
   align-items: center;
+  background: #fff;
 }
 .header .navbar a {
   display: inline-flex;
@@ -216,22 +218,59 @@ header {
 }
 #cart {
   cursor: pointer;
+  position: relative;
 }
 #cart-area {
-  display: none;
   position: absolute;
   top: 98%;
-  left: 60%;
+  left: -180%;
   min-width: 300px;
   min-height: 300px;
   background-color: #FFF;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
-  box-shadow: 0 0.5rem 1rem 1rem rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 -1rem 1rem 1rem rgba(0, 0, 0, 0.1); */
   border-left: 20px solid #ec6666;
   border-bottom: 50px solid transparent;
   border-top: 50px solid transparent;
   border-right: 20px solid #ec6666;
-  z-index: 1000;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  z-index: -1;
+  transform: translateY(-100%);
+  transition: all 0.5s;
+}
+#cart:hover #cart-area {
+  transform: translateY(0);  
+}
+.header .active a::after {
+  width: 100%;
+}
+.header .user {
+  position: relative;
+  cursor: pointer;
+}
+.header .user #username {
+  align-items: center;
+}
+.header .user .fas{
+  font-size: 16px;
+}
+.header .logout {
+  position: absolute;
+  width: 100%;
+  background-color: #f1f1f1;    
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transform: translateY(-100%);
+  transition: all 0.5s;
+  z-index: -1;
+}
+.header .logout a {
+  height: 45px;
+  line-height: 45px;
+}
+.header .logout a::after {
+  bottom: 10%;
+}
+.header .user:hover .logout {
+  transform: translateY(0);  
 }

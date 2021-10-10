@@ -1,3 +1,6 @@
+body {
+  background: url("../admin/images/home-bg.jpg") no-repeat;
+}
 .auth {
   background: url("../admin/images/home-bg.jpg") no-repeat;
   font-family: "Dancing Script", cursive;

@@ -1,6 +1,6 @@
 <?php
 require "drivers/ConfigDB.php";
-require "Contact.php";
+require "Models/Contact.php";
 require "admin/app/ClassFile/Product.php";
 require "admin/app/ClassFile/Topping.php";
 
@@ -25,17 +25,7 @@ $toppings = $toppings->getAllToppings();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pizza</title>
     <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/headers.css">
-    <link rel="stylesheet" href="css/list.css">
-    <link rel="stylesheet" href="css/contact.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/ship.css">
-    <link rel="stylesheet" href="css/responsives.css">
+    <?php require "vendor/styles.php" ?>
 </head>
 
 <body>
@@ -70,6 +60,6 @@ $toppings = $toppings->getAllToppings();
 
 </body>
 
-<script src="js/script.js"></script>
+<script src="vendor/scripts.js"></script>
 
 </html>

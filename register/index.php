@@ -1,6 +1,6 @@
 <?php
 require "../drivers/ConfigDB.php";
-require "../User.php";
+require "../Models/User.php";
 error_reporting(0);
 
 $user = new User($conn);
@@ -21,15 +21,15 @@ $users = $user->register($_POST);
     <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../css/logins.css">
-    <link rel="stylesheet" href="css/responsivee.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/responsive.css">
 </head>
 
 <body>
     <div class="auth">
         <div class="auth-form">
             <form action="" method="post" id="customerForm">
-                <h1>Đăng Kí Tài Khoản</h1>
+                <h1>Register an account</h1>
                 <div class="form-group">
                     <input class="form-control" type="text" name="fullname" placeholder="Full Name"  required value="<?php echo $_POST['fullname'] ?>">
                     <span class="highlight"><?php echo $users['name'] ?></span>

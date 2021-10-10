@@ -1,6 +1,6 @@
 <?php
 require "../drivers/ConfigDB.php";
-require "../User.php";
+require "../Models/User.php";
 require_once('Facebook/autoload.php');
 session_start();
 error_reporting(0);
@@ -32,8 +32,8 @@ $loginUrl = $helper->getLoginUrl('https://vzn.vn/demo/fb-callback.php', $permiss
     <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../css/logins.css">
-    <link rel="stylesheet" href="css/responsivee.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/responsive.css">
 </head>
 
 <body>
@@ -53,7 +53,8 @@ $loginUrl = $helper->getLoginUrl('https://vzn.vn/demo/fb-callback.php', $permiss
                 <!-- <div class="form-group g-recaptcha" data-sitekey="6Lc8iUEcAAAAAELLOaLi8G9qUdWWwf2hCcwg4JwQ"></div> -->
                 <div><?php echo $message ?></div>
                 <button name="submit" type="submit" class="btn btn-primary">Login</button>
-                <p>Don't have account? <a href="../register/index.php">Register</a></p>
+                <p>Don't have account? <a href="../register/">Register</a></p>
+                <p><a href="../reset_password/">Forgot password</a></p>
                 <?php echo '<a class="btn btn-primary" href="' . $loginUrl . '">Login with Facebook!</a>'; ?>
             </form>
         </div>

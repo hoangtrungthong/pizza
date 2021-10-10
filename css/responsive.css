@@ -66,6 +66,7 @@
   }
   .header .navbar.active a::after {
     bottom: -3px;
+    width: 0;
   }
   .header .navbar.active a:hover::before {
     width: 50%;
@@ -85,20 +86,28 @@
     border-right: 0.5rem solid var(--red);
     background: #fff;
     text-align: center;
+    height: 50px;
+    line-height: 100%;
   }
   #cart {
     position: relative;
   }
   #cart-area {
-    left: 5%;
-    right: 5%;
-    top: unset;
-    max-width: 100%;
-    height: auto;
+    display: none;
   }
-#cart:hover #cart-area {
-  display: none;
-}
+  #cart:hover #cart-area {
+    display: none;
+  } 
+  .header .logout {
+    transform: translateY(0);  
+    transition: all 0.5s;
+  }
+  .header .user:hover .logout {
+    transform: translateY(-100%);  
+    z-index: 0;
+    left: 0;
+    right: 0;
+  }
   .home {
     display: block;
   }
@@ -151,6 +160,7 @@
   }
   .header .navbar.active a::after {
     bottom: -3px;
+    width: 0;
   }
   .header .navbar.active a:hover::before {
     width: 50%;
@@ -170,19 +180,24 @@
     border-right: 0.5rem solid var(--red);
     background: #fff;
     text-align: center;
+    height: 50px;
+    line-height: 100%;
   }
-  #cart {
-    position: relative;
+  #cart-area {
+    display: none;
   }
-  /* #cart-area {
-    left: 5%;
-    right: 5%;
-    top: unset;
-    max-width: 100%;
-    height: auto;
-  } */
   #cart:hover #cart-area {
     display: none;
+  } 
+  .header .logout {
+    transform: translateY(0);  
+    transition: all 0.5s;
+  }
+  .header .user:hover .logout {
+    transform: translateY(-100%);  
+    z-index: 0;
+    left: 0;
+    right: 0;
   }
   .home {
     display: block;
@@ -223,18 +238,25 @@
   .home {
     display: block;
   }
-  #cart {
-    position: relative;
+  #cart-area {
+    display: none;
   }
-  /* #cart-area {
-    left: 5%;
-    right: 5%;
-    top: unset;
-    max-width: 100%;
-    height: auto;
-  } */
   #cart:hover #cart-area {
     display: none;
+  } 
+  .header .navbar.active a::after {
+    bottom: -3px;
+    width: 0;
+  }
+  .header .logout {
+    transform: translateY(0);  
+    transition: all 0.5s;
+  }
+  .header .user:hover .logout {
+    transform: translateY(-100%);  
+    z-index: 0;
+    left: 0;
+    right: 0;
   }
   .order .row {
     display: block;

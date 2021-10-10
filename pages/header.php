@@ -8,25 +8,39 @@
         </h1>
         <div id="menu-bar" class="fas fa-bars"></div>
         <nav class="navbar">
-            <a href="#home">home</a>
-            <a href="#products">menu</a>
-            <a href="#topping">topping</a>
-            <a href="#order">contact</a>
+            <div class="btn_active active">
+                <a href="index.php">home</a>
+            </div>
+            <div class="btn_active">
+                <a href="#products">menu</a>
+            </div>
+            <div class="btn_active">
+                <a href="#topping">topping</a>
+            </div>
+            <div class="btn_active">
+                <a href="#order">contact</a>
+            </div>
             <?php
-            if (!isset($_SESSION['email'])) {
-                echo '<a href="register/">
-                       register 
-                    </a>';
-                echo '<a href="login/"> Login </a>';
-            } else {
-                echo '<div  id="cart"><a href="cart/" class="cart">
-                        cart
-                    </a></div>';
-                echo '<a id="username">'.'hi,'. $_SESSION['username'] . '</a>';
-                echo '<a href="logout/" title="Đăng xuất">
-                        Log out
-                    </a>';
-            }
+                if (!isset($_SESSION['email'])) {
+            ?>
+                <a href="register/">register</a>
+                <a href="login/"> Login </a>
+            <?php
+                } else {
+            ?>
+                <div id="cart" class="btn_active">
+                    <a href="cart/" class="cart">cart</a>
+                </div>
+                <div class="user">
+                    <a id="username"><?php echo 'hi,' . $_SESSION['username'] ?>
+                        <i class="fas fa-caret-down"></i>
+                    </a>
+                    <div class="logout">
+                        <a href="logout/" title="Đăng xuất">Log out	&rarr;</a>
+                    </div>
+                </div>
+            <?php
+                }
             ?>
         </nav>
     </div>

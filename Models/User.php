@@ -1,7 +1,7 @@
 <?php
-require "drivers/ConfigDB.php";
-require "drivers/MysqlDB.php";
-require "validate/validateUser.php";
+require "../drivers/ConfigDB.php";
+require "../drivers/MysqlDB.php";
+require "../validate/validateUser.php";
 
 class User extends MysqlDB
 {
@@ -75,7 +75,7 @@ class User extends MysqlDB
 
             $result = $this->getUsers($email, $phone);
             if ($email === 'admin@pizza.com' && $password === md5(123123) && $phone === "0123456789") {
-                $_SESSION['email'] = $email;
+                $_SESSION['admin'] = $email;
                 $_SESSION['username'] = $result['name'];
                 echo '<script>alert("Chào mừng bạn đến với trang quản trị.")</script>'; 
                 echo '<script>window.location.href="../admin/home/"</script>';

@@ -1,0 +1,72 @@
+.table-cart {
+  margin-top: 10%;
+  background-color: #fff;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #ccc;
+}
+th:nth-child(2), td:nth-child(2) {
+  width: 5%;
+}
+td, th {
+  border: 1px solid #ddd;
+  padding: 5px;
+  text-align: center;
+  width: 5%;
+}
+table th {
+  padding: 5px 0;
+  background-color: var(--red);
+  color: white;
+}
+.table-cart .btn {
+  font-size: 18px;
+  background-color: #fff ;
+  margin-top: 10px;
+}
+.table-cart button.btn {
+  float: right;
+}
+
+@media screen and (max-width: 600px) {
+ table#cart tbody td .form-control {
+ width:20%;
+ display: inline !important;
+}
+ .actions .btn {
+ width:36%;
+ margin:1.5em 0;
+}
+ .actions .btn-info {
+ float:left;
+}
+ .actions .btn-danger {
+ float:right;
+}
+ table#cart thead {
+display: none;
+}
+ table#cart tbody td {
+display: block;
+padding: .6rem;
+min-width:320px;
+}
+ table#cart tbody tr td:first-child {
+background: #333;
+color: #fff;
+}
+ table#cart tbody td:before {
+ content: attr(data-th);
+font-weight: bold;
+ display: inline-block;
+width: 8rem;
+}
+ table#cart tfoot td {
+display:block;
+}
+ table#cart tfoot td .btn {
+display:block;
+}
+}

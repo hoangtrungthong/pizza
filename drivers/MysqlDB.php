@@ -33,7 +33,7 @@ class MysqlDB
         $sql .= '(' . implode(',', array_keys($data)) . ')';
         $sql .= " VALUES ";
         $sql .= "('" . implode("','", array_values($data)) . "')";
-
+        
         mysqli_query($this->conn, $sql);
     }
 
