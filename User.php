@@ -3,16 +3,16 @@ require "drivers/ConfigDB.php";
 require "drivers/MysqlDB.php";
 require "validate/validateUser.php";
 
-class Customer extends MysqlDB
+class User extends MysqlDB
 {
-    public function getAllCustomer($table)
+    public function getAllUser($table)
     {
         $this->get($table);
     }
 
-    public function getCustomers($email, $phone)
+    public function getUsers($email, $phone)
     {
-        $sql = "SELECT * FROM customers WHERE email = '$email' OR phone = '$phone' LIMIT 1";
+        $sql = "SELECT * FROM users WHERE email = '$email' OR phone = '$phone' LIMIT 1";
         $query = mysqli_query($this->conn, $sql);
         $results = mysqli_fetch_assoc($query);
 
@@ -41,9 +41,9 @@ class Customer extends MysqlDB
 
             if (empty($errors)) {
                 if ($password === $rePassword) {
-                    $getUser = $this->getCustomers($email, $phone);
+                    $getUser = $this->getUsers($email, $phone);
                     if (!isset($getUser)) {
-                        $this->insert('customers', $data);
+                        $this->insert('users', $data);
                         echo '<script>alert("Đăng kí thành công!! Hãy đăng nhập!")</script>';
                         echo '<script>window.location.href="../login/index.php"</script>';
                     } else {
@@ -73,7 +73,7 @@ class Customer extends MysqlDB
             $phone = $_POST['phone'];
             $password = md5($_POST['password']);
 
-            $result = $this->getCustomers($email, $phone);
+            $result = $this->getUsers($email, $phone);
             if ($email === 'admin@pizza.com' && $password === md5(123123) && $phone === "0123456789") {
                 $_SESSION['email'] = $email;
                 $_SESSION['username'] = $result['name'];

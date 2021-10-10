@@ -3,7 +3,7 @@ require "../drivers/ConfigDB.php";
 require "../User.php";
 error_reporting(0);
 
-$user = new Customer($conn);
+$user = new User($conn);
 $users = $user->register($_POST);
 ?>
 <!DOCTYPE html>

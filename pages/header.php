@@ -19,7 +19,7 @@
                     </a>';
                 echo '<a href="login/"> Login </a>';
             } else {
-                echo '<div  id="cart"><a href="cart/index.php" class="cart">
+                echo '<div  id="cart"><a href="cart/" class="cart">
                         cart
                     </a></div>';
                 echo '<a id="username">'.'hi,'. $_SESSION['username'] . '</a>';

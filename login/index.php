@@ -5,7 +5,7 @@ require_once('Facebook/autoload.php');
 session_start();
 error_reporting(0);
 
-$user = new Customer($conn);
+$user = new User($conn);
 $users = $user->login($_POST);
 
 $fb = new Facebook\Facebook([
