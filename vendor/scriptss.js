@@ -7,10 +7,24 @@ var send = document.getElementById('send');
 var cart = document.getElementById('cart');
 var cartLink = document.querySelector('.cart');
 var div = document.createElement('div');
-// cart shopping
-var cartArea = div.setAttribute('id', 'cart-area');
-var p = document.createElement('p');
-var img = document.createElement('img');
+// button up/down quantity
+var plus = document.querySelector('.plus')
+var minus = document.querySelector('.minus')
+var quantity =  document.querySelector('.input-qty')
+
+// up/down quantity
+// var p = 0;
+// plus.onclick = () => {
+//   quantity.value = p++;
+// }
+// minus.onclick = () => {
+//   if (p === 0) {
+//     return;
+//   } else {
+//     quantity.ariaValueMin = 0;
+//     quantity.value = p--;
+//   }
+// }
 
 // redirect login
 btn.forEach(el => {
@@ -20,30 +34,8 @@ btn.forEach(el => {
   } else {
     send.removeAttribute("href");
     cartLink.setAttribute("href", "cart.php");
-    // cartLink.onclick = () => {
-    //   div.classList.toggle('show');
-    // }
-    // window.onscroll = (e) => {
-    //   if (!e.target.matches('.cart')) {
-    //     var cartAreas = document.querySelector("#cart-area");
-    //     if (cartAreas.classList.contains('show')) {
-    //       cartAreas.classList.remove('show');
-    //     }
-    //   }
-    // }
   }
 });
-
-// cart shopping
-if (user) {
-  p.setAttribute('style', 'padding: 1rem; text-align: center');
-  p.innerText = "Giỏ hàng trống";
-  img.src = "images/anxiety.png";
-  img.setAttribute('style', 'margin: 0 auto;');
-  p.appendChild(img);
-  div.appendChild(p);
-  cart.appendChild(div);
-}
 
 // menu button
 menu.onclick = () => {
@@ -61,7 +53,7 @@ function loader() {
   document.querySelector('.loader').classList.add('fade-out');
 }
 window.onload = () => {
-  setInterval(loader, 3000)
+  setInterval(loader, 2000)
 }
 
 // page active
@@ -94,18 +86,10 @@ window.fbAsyncInit = function () {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-// chat bots
-// var __vnp = {
-//   code: 8479,
-//   key: '',
-//   secret: '0b6923d07f25c9d8f2387008532bc8d2'
-// };
-// (function () {
-//   var ga = document.createElement('script');
-//   ga.type = 'text/javascript';
-//   ga.async = true;
-//   ga.defer = true;
-//   ga.src = '//core.vchat.vn/code/tracking.js';
-//   var s = document.getElementsByTagName('script');
-//   s[0].parentNode.insertBefore(ga, s[0]);
-// })();
+//chat bots-vchat
+var _vc_data = {id : 10583534, secret : '189589f0b79ea90fe393831e8a29e162'};
+(function() {var ga = document.createElement('script');
+ga.type = 'text/javascript';ga.async=true; 
+ga.defer=true;ga.src = '//live.vnpgroup.net/client/tracking.js?id=10583534';
+var s = document.getElementsByTagName('script');
+s[0].parentNode.insertBefore(ga, s[0]);})();

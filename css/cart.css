@@ -14,7 +14,8 @@ td, th {
   border: 1px solid #ddd;
   padding: 5px;
   text-align: center;
-  width: 5%;
+  font-size: 15px;
+  width: 15%;
 }
 table th {
   padding: 5px 0;
@@ -29,7 +30,37 @@ table th {
 .table-cart button.btn {
   float: right;
 }
-
+.buttons_added {
+  display:inline-flex;
+  border: none;
+}
+.is-form {
+  padding:10px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.is-form:focus,.input-text:focus {
+  outline:none;
+}
+.is-form.minus {
+  border-radius:4px 0 0 4px;
+}
+.is-form.plus {
+  border-radius:0 4px 4px 0;
+}
+.is-form:hover {
+  background-color: #fff;
+}
+.input-qty {
+  background-color:#fff;
+  text-align:center;
+  font-size:1rem;
+  width: 40px;
+}
+.input-qty::-webkit-outer-spin-button,.input-qty::-webkit-inner-spin-button {
+  -webkit-appearance:none;
+  margin:0;
+}
 @media screen and (max-width: 600px) {
  table#cart tbody td .form-control {
  width:20%;

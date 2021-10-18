@@ -2,8 +2,7 @@
   --red: #ff3838;
 }
 * {
-  /* font-family: 'Shadows Into Light', cursive, sans-serif; */
-  font-family: 'Dancing Script', cursive, sans-serif;
+  font-family: "Dancing Script", Arial, Helvetica, cursive, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -231,15 +230,51 @@ header {
   border-bottom-right-radius: 1rem;
   /* box-shadow: 0 -1rem 1rem 1rem rgba(0, 0, 0, 0.1); */
   border-left: 20px solid #ec6666;
-  border-bottom: 50px solid transparent;
-  border-top: 50px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-top: 15px solid transparent;
   border-right: 20px solid #ec6666;
   z-index: -1;
   transform: translateY(-100%);
   transition: all 0.5s;
 }
+#cart-area p {
+  padding: 1rem; 
+  margin-top: 4rem;
+  text-align: center
+}
+#cart-area p.cart_display {
+  margin-top: 0;
+}
+#cart-area tr {
+  height: 45px;
+}
+#cart-area img {
+  margin: 0 auto;
+  width: 60px;
+  height: 40px;
+}
+#cart-area img#cart_space_image {
+  width: auto;
+  height: auto;
+}
 #cart:hover #cart-area {
   transform: translateY(0);  
+}
+#cart-area .go_cart {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: unset;
+  height: 40px;
+  line-height: 40px;
+  padding: 5px;
+  border-bottom: 2px solid #ec6666;
+}
+#cart-area .go_cart::after {
+  content: none;
+}
+#cart-area .go_cart:hover::after {
+  width: 0;
 }
 .header .active a::after {
   width: 100%;

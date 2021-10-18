@@ -6,11 +6,17 @@ body {
   font-family: "Dancing Script", cursive;
   color: #635b5b;
 }
+.auth a {
+  text-decoration: none;
+}
+.auth h1 {
+  font-size: 2.5rem;
+}
 .auth-form {
   margin-top: 50px;
 }
 .auth-form > form > p {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .auth-form > form > p > a {
   color: #ff3838;
@@ -26,18 +32,18 @@ body {
   width: 0;
 }
 .auth-form > form > p > a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 .auth-form > form > p > a:hover::after {
-    width: 100%;
-    right: 0;
-    transition: all 0.5s;
+  width: 100%;
+  right: 0;
+  transition: all 0.5s;
 }
 .auth-form form {
   border-radius: 1rem;
   box-shadow: 0px 0px 100px #ccc;
   text-align: center;
-  padding: 20px 20px;
+  padding: 20px 20px 50px;
   width: 450px;
   margin: 0 auto;
   font-size: 25px;
@@ -45,29 +51,50 @@ body {
 .auth .form-control,
 .auth .btn {
   font-size: 20px;
-  border-radius: 10px;
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  margin-bottom: 15px;
 }
 .btn-primary {
   background: #ff3838;
   border-style: none;
   color: #fff;
-  width: 70%;
+  width: 70% !important;
   opacity: 0.8;
+  cursor: pointer;
 }
 .btn-primary:hover {
   opacity: 1;
   background-color: #ff3838;
-  border: none;
   transition: all 0.5s;
 }
-
+.btn-fb {
+  padding: 10px 50px !important;
+}
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: rgb(255 56 56 / 10%);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgb(255 56 56 / 25%);
+}
+.btn:focus,
+.btn-primary:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus {
+  box-shadow: 0 0 0 0.2rem rgb(255 56 56 / 50%);
+}
+.btn-primary:not(:disabled):not(.disabled):active {
+  background-color: #ff3838;
+  opacity: 0.8;
+}
 /* responsive */
 @media (max-width: 450px) {
   .auth-form form {
     width: 90%;
   }
-  .auth-form > form > p > a  {
+  .auth-form > form > p > a {
     margin: 30px;
   }
 }
-

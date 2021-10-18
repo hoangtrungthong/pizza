@@ -8,7 +8,7 @@ require "../app/ClassFile/Product.php";
 error_reporting(0);
 
 $products = new Product($conn);
-$product = $products->getDetailProduct($_GET['id']);
+$product = $products->getDetailProduct(md5($_GET['id']));
 $productUp = $products->update($_POST, $_FILES, $_SERVER['REQUEST_METHOD']);
 ?>
 <!DOCTYPE html>
@@ -54,7 +54,7 @@ $productUp = $products->update($_POST, $_FILES, $_SERVER['REQUEST_METHOD']);
                                     </div>
                                     <div>
                                         <label for="price">Giá</label>
-                                        <input type="text" name="price" id="price" value="<?php echo $product['price'] ?>">
+                                        <input type="number" name="price" id="price" value="<?php echo number_format($product['price'], 0, '.', '') ?>">
                                         <span class="highlight"><?php echo $productUp['price']  ?></span>
                                     </div>
                                 </div>

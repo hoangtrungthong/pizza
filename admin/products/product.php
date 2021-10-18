@@ -42,7 +42,7 @@ $products = $products->getAllProduct();
                                     <td><img src="<?php echo $product["image"] ?>" alt="hình ảnh" srcset=""></td>
                                     <td><?php echo $product["description"] ?></td>
                                     <td><?php echo $product["size"] ?></td>
-                                    <td><?php echo $product["price"] ?></td>
+                                    <td><?php echo number_format($product['price'], 0, '', '.') ?></td>
                                     <td><a class="btn update-btn" href="updateProduct.php?id=<?php echo $product['pID'] ?>">Sửa</a>
                                         <a class="btn update-btn" href="delete.php?id=<?php echo $product['pID'] ?>">Xóa</a>
                                     </td>

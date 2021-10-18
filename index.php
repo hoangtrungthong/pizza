@@ -57,9 +57,7 @@ $toppings = $toppings->getAllToppings();
     <!-- Your Plugin chat code -->
     <div id="fb-customer-chat" class="fb-customerchat">
     </div>
-
+    
+    <script src="vendor/scriptss.js"></script>
 </body>
-
-<script src="vendor/scripts.js"></script>
-
 </html>

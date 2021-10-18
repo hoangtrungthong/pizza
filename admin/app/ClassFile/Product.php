@@ -70,9 +70,9 @@ class Product
     {
         $sql = "SELECT *, products.id as pID, product_attribute.id as paID 
             FROM products 
-            INNER JOIN product_attribute 
+            JOIN product_attribute 
             ON products.id = product_attribute.product_id 
-            WHERE products.id='$id'";
+            WHERE md5(products.id)='$id'";
 
         $result = mysqli_query($this->conn, $sql);
         $product = mysqli_fetch_assoc($result);

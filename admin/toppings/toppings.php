@@ -39,7 +39,7 @@ $toppings = $topping->getAllToppings();
                                 <tr>
                                     <td><?php echo $topping["name"] ?></td>
                                     <td><img src="<?php echo $topping["image"] ?>" alt="hình ảnh" srcset=""></td>
-                                    <td><?php echo $topping["price"] ?></td>
+                                    <td><?php echo number_format($topping['price'], 0, '', '.') ?></td>
                                     <td>
                                         <a class="btn update-btn" href="updateTopping.php?id=<?php echo $topping['id'] ?>">Sửa</a>
                                         <a class="btn update-btn" href="delete.php?id=<?php echo $topping['id'] ?>">Xóa</a>

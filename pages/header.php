@@ -21,26 +21,59 @@
                 <a href="#order">contact</a>
             </div>
             <?php
-                if (!isset($_SESSION['email'])) {
+            if (!isset($_SESSION['email'])) {
             ?>
-                <a href="register/">register</a>
-                <a href="login/"> Login </a>
+                <div class="btn_active">
+                    <a href="register/">register</a>
+                </div>
+                <div class="btn_active">
+                    <a href="login/"> Login </a>
+                </div>
             <?php
-                } else {
+            } else {
             ?>
                 <div id="cart" class="btn_active">
                     <a href="cart/" class="cart">cart</a>
+                    <div id="cart-area">
+                        <?php
+                        if (!isset($_SESSION['cart']) || !count($_SESSION['cart'])) {
+                        ?>
+                            <p>Giỏ hàng trống
+                                <img id="cart_space_image" src="images/anxiety.png">
+                            </p>
+                        <?php
+                        } else {
+                        ?>
+                            <p class="cart_display">Danh sạch món ăn bạn order:</p>
+                            <table>
+                                <?php
+                                $cart = array_slice(array_reverse($_SESSION['cart']), 0, 3);
+                                foreach ($cart as $key => $value) {
+                                ?>
+                                    <tr>
+                                        <td><img src="<?php echo substr($value['product_image'], 6) ?>" alt=""></td>
+                                        <td><?php echo $value['pizza'] ?></td>
+                                        <td><?php echo number_format( $value["price"], 0, '', '.' ). 'đ' ?></td>
+                                    </tr>
+                                <?php } ?>
+                            </table>
+                            <a class="go_cart" href="cart.php">Xem tất cả &raquo;</a>
+                        <?php
+                        }
+                        ?>
+                    </div>
                 </div>
+
                 <div class="user">
                     <a id="username"><?php echo 'hi,' . $_SESSION['username'] ?>
                         <i class="fas fa-caret-down"></i>
                     </a>
                     <div class="logout">
-                        <a href="logout/" title="Đăng xuất">Log out	&rarr;</a>
+                        <a href="logout/" title="Đăng xuất">Log out &rarr;</a>
                     </div>
                 </div>
             <?php
-                }
+            }
             ?>
         </nav>
     </div>

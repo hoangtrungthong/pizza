@@ -1,7 +1,7 @@
 <?php
-require "../drivers/ConfigDB.php";
-require "../admin/app/ClassFile/Topping.php";
-require "../admin/app/ClassFile/Product.php";
+require "drivers/ConfigDB.php";
+require "admin/app/ClassFile/Topping.php";
+require "admin/app/ClassFile/Product.php";
 
 class Order extends MysqlDB
 {

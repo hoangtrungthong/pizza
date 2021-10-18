@@ -1,12 +1,12 @@
 <section class="products" id="topping">
     <h2 class="heading">Các loại <span class="highlight">topping</span></h2>
     <div class="box-container">
-        <!-- <?php 
+        <?php 
             foreach ($toppings as $topping) {
         ?>
             <div class="box box-topping">
                 <img class="image" src="<?php echo substr($topping['image'], 6) ?>" alt="Hình Ảnh">
-                <span><?php echo $topping['price']."k" ?></span>
+                <span><?php echo number_format($topping['price'], 0, '', '.')."đ" ?></span>
                 <div class="topping">
                     <h3><?php echo $topping['name'] ?></h3>
                 </div>
@@ -24,8 +24,8 @@
             </div>
         <?php
             }
-        ?> -->
-        <div class="box box-topping">
+        ?>
+        <!-- <div class="box box-topping">
             <img class="image" src="images/top1.png" alt="Hình Ảnh">
             <span>10k - 30k</span>
             <div class="topping">
@@ -88,6 +88,6 @@
                 <h3>Bacon</h3>
             </div>
             <a href="#order" class="btn btn-topping">Topping now</a>
-        </div>
+        </div> -->
     </div>
 </section>

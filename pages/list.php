@@ -1,12 +1,12 @@
 <section class="products" id="products">
     <h2 class="heading">Các loại <span class="highlight">pizza</span></h2>
     <div class="box-container">
-        <!-- <?php
+        <?php
         foreach ($products as $product) {
         ?>
             <div class="box">
                 <img class="image" src="<?php echo substr($product["image"], 6) ?>">
-                <span><?php echo $product['price'] . "k" ?></span>
+                <span><?php echo number_format($product['price'], 0, '', '.') . "đ" ?></span>
                 <div class="content">
                     <h3><?php echo $product['name'] ?></h3>
                     <p><?php echo $product['description'] ?></p>
@@ -14,8 +14,8 @@
                         <?php
                             if (isset($_SESSION['email'])) {
                         ?>
-                            <a href="cart/add.php?items=<?php echo $product['id'] ?>" name="add" class="btn">đặt món</a>
-                            <a href="cart.php?action=add&items=<?php echo md5($product['id']) ?>" name="add" class="btn btn-cart" title="Thêm vào giỏ hàng">
+                            <a href="cart.php?items=<?php echo md5($product['id']) ?>" name="add" class="btn">đặt món</a>
+                            <a href="cart.php?items=<?php echo md5($product['id']) ?>" name="add" class="btn btn-cart" title="Thêm vào giỏ hàng">
                                 <img src="images/add-to-cart.png" alt="">
                             </a>
                         <?php
@@ -31,8 +31,8 @@
             </div>
         <?php
         }
-        ?> -->
-        <div class="box">
+        ?>
+        <!-- <div class="box">
             <img class="image" src="images/p1.jpg" alt="Hình Ảnh">
             <span>150k - 300k</span>
             <div class="content">
@@ -157,6 +157,6 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </section>

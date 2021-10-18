@@ -53,9 +53,9 @@ $loginUrl = $helper->getLoginUrl('https://vzn.vn/demo/fb-callback.php', $permiss
                 <!-- <div class="form-group g-recaptcha" data-sitekey="6Lc8iUEcAAAAAELLOaLi8G9qUdWWwf2hCcwg4JwQ"></div> -->
                 <div><?php echo $message ?></div>
                 <button name="submit" type="submit" class="btn btn-primary">Login</button>
-                <p>Don't have account? <a href="../register/">Register</a></p>
                 <p><a href="../reset_password/">Forgot password</a></p>
-                <?php echo '<a class="btn btn-primary" href="' . $loginUrl . '">Login with Facebook!</a>'; ?>
+                <p>Don't have account? <a href="../register/">Register</a></p>
+                <?php echo '<a class="btn btn-primary btn-fb" href="' . $loginUrl . '">Login with Facebook!</a>'; ?>
             </form>
         </div>
     </div>

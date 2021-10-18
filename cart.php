@@ -1,7 +1,7 @@
 <?php
 require "drivers/ConfigDB.php";
-require "Contact.php";
-require "Order.php";
+require "Models/Contact.php";
+require "Models/Order.php";
 
 session_start();
 error_reporting(0);
@@ -9,8 +9,48 @@ error_reporting(0);
 if (!isset($_SESSION['email'])) {
     header("location: index.php");
 };
-// $order = new Order($conn);
-// $order->addOrder($_GET['items'], $conn);
+
+$id = isset($_GET['items']) ? md5($_GET['items']) : '';
+
+$products = new Product($conn);
+$products = $products->getDetailProduct($_GET['items']);
+
+if ($products) {
+    if (isset($_SESSION['cart'])) {
+        if (isset($_SESSION['cart'][$id])) {
+            $_SESSION['cart'][$id]['quantity']++;
+            // if (isset($_POST['minus'])) {   
+            //     $_SESSION['cart'][$id]['quantity']--; 
+            //     if ($_SESSION['cart'][$id]['quantity'] === 0) {
+            //         unset($_SESSION['cart'][$id]);
+            //     }    
+            // }
+            $_SESSION['notification'] = "<script>alert('Sản phẩm đã được cập nhật trong giỏ hàng!')</script>";
+        } else {
+            $_SESSION['cart'][$id] = [
+                'product_id' => $products['id'],
+                'pizza' => $products['name'],
+                'product_image' => $products['image'],
+                'size' => $products['size'],
+                "quantity" => 1,
+                "price" => $products['price']
+            ];
+            $_SESSION['notification'] = "<script>alert('Sản phẩm đã được cập nhật trong giỏ hàng!')</script>";
+        }
+    } else {
+        $_SESSION['cart'][$id] = [
+            'product_id' => $products['id'],
+            'pizza' => $products['name'],
+            'product_image' => $products['image'],
+            'size' => $products['size'],
+            "quantity" => 1,
+            "price" => $products['price']
+        ];
+        $_SESSION['notification'] = "<script>alert('Sản phẩm đã được thêm vào giỏ hàng!')</script>";
+    }
+} else {
+    $_SESSION['notification'] = "<script>alert('Sản phẩm không tồn tại!')</script>";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,9 +96,10 @@ if (!isset($_SESSION['email'])) {
     <section class="table-cart">
         <form action="" method="post">
             <table>
-                <p><?php if (isset($_SESSION['notification'])) {
-                    echo $_SESSION['notification'];
-                } ?></p>
+                <p><?php //if (isset($_SESSION['notification'])) {
+                    //  echo $_SESSION['notification'];
+                    //} 
+                    ?></p>
                 <tr>
                     <th>Sản phẩm</th>
                     <th>hình ảnh</th>
@@ -68,9 +109,10 @@ if (!isset($_SESSION['email'])) {
                     <th>Thao tác</th>
                 </tr>
                 <?php
-                if (isset($_SESSION['cart']) && isset($_SESSION['username'])) {
-                    $totalPrice = 0;
-                    foreach($_SESSION['cart'] as $key => $value) {
+                if (isset($_SESSION['cart']) && isset($_SESSION['username']) && count($_SESSION['cart']) > 0) {
+                    $totalPrice = 0; 
+                    
+                    foreach ($_SESSION['cart'] as $key => $value) {
                         $subTotal = $value['quantity'] * $value['price'];
                         $totalPrice +=  $subTotal;
                 ?>
@@ -78,28 +120,44 @@ if (!isset($_SESSION['email'])) {
                         <td><?php echo $value["pizza"] ?></td>
                         <td><img src="<?php echo substr($value["product_image"], 6) ?>" alt="hình ảnh" srcset=""></td>
                         <td><?php echo $value["size"] ?></td>
-                        <td><?php echo $value['quantity'] ?></td>
-                        <td><?php echo $value["price"].'$' ?></td>
+                        <td>
+                            <div class="buttons_added">
+                                <button name="minus" onclick="minus()" class="minus is-form">&#45;</button>
+                                <input name="quantity" min="0" aria-label="quantity" class="input-qty" type="number" value="<?php echo $value['quantity'] ?>">
+                                <button name="plus" onclick="plus()" class="plus is-form">&#43;</button>
+                            </div>
+                        </td>
+                        <td><?php echo number_format( $value["price"], 0, '', '.' ). 'đ' ?></td>
                         <td>
                             <a class="btn update-btn" href="cart/delete.php?items=<?php echo $key ?>">Xóa</a>
                         </td>
                     </tr>
                 <?php } ?>
                     <tr>
-                        <td colspan="6">Tổng giá: <?php echo $totalPrice.'$' ?></td>
+                        <td colspan="6">Tổng giá: <?php echo number_format( $totalPrice, 0, '', '.' ).'đ'  ?></td>
                     </tr>
                 <?php
                 } else {
                 ?>
                     <tr>
-                        <td colspan="5">Giỏ hàng trống</td>
+                        <td colspan="6">Giỏ hàng trống</td>
                     </tr>
                 <?php
                 }
                 ?>
             </table>
-            <a href="index.php" class="btn">&larr; tiếp tục mua sắm</a>
-            <button type="submit" class="btn" name="submit">Thanh toán &rarr;</button>
+            <?php
+            if (count($_SESSION['cart']) > 0) {
+            ?>
+                <a href="index.php" class="btn">&laquo; tiếp tục mua sắm</a>
+                <button type="submit" class="btn" name="submit">Thanh toán &raquo;</button>
+            <?php
+            } else {
+            ?>
+                <a href="index.php" class="btn">&laquo; Mua pizza</a>
+            <?php
+            }
+            ?>
         </form>
     </section>
 
@@ -112,6 +170,6 @@ if (!isset($_SESSION['email'])) {
     <div id="fb-customer-chat" class="fb-customerchat">
     </div>
 </body>
-<script src="vendor/scripts.js"></script>
+<script src="vendor/scriptss.js"></script>
 
 </html>
