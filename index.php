@@ -58,6 +58,6 @@ $toppings = $toppings->getAllToppings();
     <div id="fb-customer-chat" class="fb-customerchat">
     </div>
     
-    <script src="vendor/scriptss.js"></script>
 </body>
+<script src="vendor/script.js"></script>
 </html>

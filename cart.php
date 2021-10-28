@@ -170,6 +170,6 @@ if ($products) {
     <div id="fb-customer-chat" class="fb-customerchat">
     </div>
 </body>
-<script src="vendor/scriptss.js"></script>
+<script src="vendor/script.js"></script>
 
 </html>
